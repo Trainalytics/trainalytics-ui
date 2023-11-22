@@ -40,7 +40,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 		const languages = this.i18nService.getAvailableLangs();
 		this.setDropdownLangValue(languages);
 		this.currentLang = this.i18nService.getActiveLang();
-		throw new Error('Method not implemented.');
 	}
 
 	ngOnDestroy(): void {
