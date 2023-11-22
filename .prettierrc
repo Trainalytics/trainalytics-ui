@@ -1,0 +1,24 @@
+{
+	"semi": true,
+	"printWidth": 100,
+	"overrides": [
+		{
+			"files": ["*.html"],
+			"options": {
+				"singleAttributePerLine": true,
+				"singleQuote": false
+			}
+		},
+		{
+			"files": ["*.ts"],
+			"options": {
+				"semi": true,
+				"singleAttributePerLine": true,
+				"singleQuote": true,
+				"trailingComma": "all",
+				"bracketSpacing": true,
+				"arrowParens": "avoid"
+			}
+		}
+	]
+}
