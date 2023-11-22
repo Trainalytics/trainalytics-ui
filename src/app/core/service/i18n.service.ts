@@ -67,7 +67,7 @@ export class I18nService {
 	}
 
 	/**
-	 * Change the active language of the app to a new one
+	 * Change the application's active language to a new one
 	 * @param lang - the language to switch to
 	 */
 	setActiveLang(lang: Lang): void {
@@ -76,7 +76,7 @@ export class I18nService {
 	}
 
 	/**
-	 * Update the locale of the primeng component (ex: datepickers)
+	 * Update the locale of the primeng component (ex: fieldset)
 	 */
 	updatePrimeComponentLocale(): void {
 		const translations = this.translocoService.translateObject(primengTranslationKey);
@@ -86,7 +86,7 @@ export class I18nService {
 	}
 
 	/**
-	 * Translate a given key to the current language
+	 * Translate a given key into the current language
 	 * @param translation - the translation object which contains params and text to translate
 	 * @returns the translated text
 	 */

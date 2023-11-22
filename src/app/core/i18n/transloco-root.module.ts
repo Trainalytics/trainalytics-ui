@@ -4,10 +4,6 @@ import { provideTranslocoPersistLang } from '@ngneat/transloco-persist-lang';
 import { defineInitialAppLanguage, TranslocoCustomLoader } from './loaders/transloco.loader';
 import { availableLangs, defaultLang } from '@models/locale.model';
 
-
-/**
- * This is the root module for the i18n managed by Transloco
- */
 @NgModule({
 	exports: [TranslocoModule],
 	providers: [

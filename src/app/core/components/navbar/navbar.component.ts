@@ -3,6 +3,7 @@ import { I18nService } from '@core/service/i18n.service';
 import { Lang } from '@models/locale.model';
 import { MainNavLink } from '@models/main-nav-link.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
+import { UserInfo } from '@models/user-info.model';
 
 /**
  * Array that contains each tab of the navbar
@@ -31,12 +32,22 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	*/
 	currentLang: Lang = 'fr';
 
+	/**
+	 * Information about the connected user
+	 */
+	connectedUserInfo: UserInfo | undefined;
+
 	constructor(
 		private i18nService: I18nService,
 	) { }
 
 	ngOnInit(): void {
 		this.mainNavigation = navbarNavigation;
+		this.connectedUserInfo = {
+			username: 'dieperid',
+			name: 'David',
+			email: 'test@gmail.com',
+		};
 		const languages = this.i18nService.getAvailableLangs();
 		this.setDropdownLangValue(languages);
 		this.currentLang = this.i18nService.getActiveLang();
@@ -47,8 +58,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * Map the availables languages to the language dropdown selector model
-	 * @param langs - the available language list
+	 * Set the available languages in the dropdown for the different languages
+	 * @param langs - the list of the availables languages
 	 */
 	setDropdownLangValue(langs: Array<Lang>): void {
 		this.availableLangs.length = 0;
@@ -56,12 +67,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	}
 
 	/**
-	 * Change the current lang of the app
+	 * Change the current lang of the application
 	 * @param evt - the change event on the selector
 	 */
 	changeLocale(evt: ChangeEvent): void {
 		const lang = evt.value;
 		this.currentLang = lang;
-		// this.i18nService.setActiveLang(lang);
+		this.i18nService.setActiveLang(lang);
 	}
 }
