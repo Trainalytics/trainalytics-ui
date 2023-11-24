@@ -17,16 +17,6 @@ body:
           description: Tell us about your environment.
       validations:
           required: true
-    - type: dropdown
-      id: engine
-      attributes:
-          label: Build / Runtime
-          multiple: false
-          options:
-              - Angular CLI App
-              - TypeScript
-      validations:
-          required: true
     - type: input
       id: browsers
       attributes:
