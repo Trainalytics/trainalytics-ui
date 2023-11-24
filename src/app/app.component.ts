@@ -22,15 +22,15 @@ export class AppComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
-		this._setAppName();
+		this._setAppName('Trainalytics');
 		this.currentYear = new Date().getFullYear().toString();
 	}
 
 	/**
 	 * Method to set the name of the application
 	 */
-	private _setAppName(): void {
-		this._appName = 'Trainalytics';
+	private _setAppName(appName: string): void {
+		this._appName = appName;
 	}
 
 	/**

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { TranslocoTestingModule, TranslocoTestingOptions } from '@ngneat/transloco';
-import fr from '@assets/i18n/fr.json';
+import fr from '../../assets/i18n/fr.json';
 import de from '../../assets/i18n/de.json';
 import en from '../../assets/i18n/en.json';
 import { Lang, lang } from '@models/lang.model';
