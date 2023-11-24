@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	/**
 	 * The currently selected language
 	*/
-	currentLang: Lang = 'fr';
+	currentLang: Lang;
 
 	/**
 	 * Information about the connected user
