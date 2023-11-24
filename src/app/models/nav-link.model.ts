@@ -1,7 +1,4 @@
-/**
- * Model for the main navigation links
- */
-export interface MainNavLink {
+export interface NavLink {
 	/**
 	 * The icon to display beside the label
 	 */

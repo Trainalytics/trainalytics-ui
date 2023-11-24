@@ -1,4 +1,4 @@
-import { availableLangs, Lang } from '@models/locale.model';
+import { availableLangs, Lang } from '@models/lang.model';
 
 /**
  * Check if a given language is available for translations in the app

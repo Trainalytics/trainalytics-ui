@@ -11,5 +11,5 @@ export interface ChangeEvent {
 	/**
 	 * The value set in the dropdown
 	 */
-	value: any; // eslint-disable-line @typescript-eslint/no-explicit-any -- Reason: value can be anything
+	value: any;
 }

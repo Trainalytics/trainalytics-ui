@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { Translation, TranslocoLoader } from '@ngneat/transloco';
-import { Lang } from '@models/locale.model';
+import { Lang } from '@models/lang.model';
 import { isLangAvailable } from '../i18n.helper';
 import { GetLangParams } from '@ngneat/transloco-persist-lang';
 

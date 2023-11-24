@@ -1,14 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { I18nService } from '@core/service/i18n.service';
-import { Lang } from '@models/locale.model';
-import { MainNavLink } from '@models/main-nav-link.model';
+import { Lang } from '@models/lang.model';
+import { NavLink } from '@models/nav-link.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
 import { UserInfo } from '@models/user-info.model';
 
 /**
  * Array that contains each tab of the navbar
  */
-const navbarNavigation: Array<MainNavLink> = [];
+const navbarNavigation: Array<NavLink> = [];
 
 @Component({
 	selector: 'trainalytics-navbar',
@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	/**
 	 * The main navigation items in the header
 	 */
-	mainNavigation: Array<MainNavLink> = [];
+	mainNavigation: Array<NavLink> = [];
 
 	/**
 	 * The languages available in the lang selector

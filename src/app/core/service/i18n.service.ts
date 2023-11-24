@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Lang } from '@models/locale.model';
+import { Lang } from '@models/lang.model';
 import { TranslationWithParam } from '@models/translation-with-param.model';
 import { TranslocoService } from '@ngneat/transloco';
 import { combineLatest, filter, pluck, tap } from 'rxjs';

@@ -4,7 +4,7 @@ import { TranslocoTestingModule, TranslocoTestingOptions } from '@ngneat/translo
 import fr from '@assets/i18n/fr.json';
 import de from '../../assets/i18n/de.json';
 import en from '../../assets/i18n/en.json';
-import { Lang, lang } from '@models/locale.model';
+import { Lang, lang } from '@models/lang.model';
 
 /**
  * Transloco Module factory used for unit tests
