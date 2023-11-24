@@ -1,0 +1,16 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-size: 14px;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	background-color: var(--color-bg-body);
+	color: var(--color-text-body);
+	font-family: var(--font-family);
+}
