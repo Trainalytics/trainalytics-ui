@@ -176,7 +176,7 @@
 </style>
 
 <header>
-	<trainalytics-navbar [appName]="appName"></trainalytics-navbar>
+	<trainalytics-navbar [appName]="getAppName()"></trainalytics-navbar>
 </header>
 
 <main class="app-main">
@@ -249,7 +249,7 @@
 					</clipPath>
 				</defs>
 			</svg>
-			<h1>Hello, {{ appName }}</h1>
+			<h1>Hello, {{ getAppName() }}</h1>
 			<p>Congratulations! Your app is running. 🎉</p>
 		</div>
 		<div
@@ -351,7 +351,7 @@
 </main>
 
 <footer class="app-footer">
-	<span>© {{ currentYear }} {{ appName }} Team</span>
+	<span>© {{ currentYear }} {{ getAppName() }} Team</span>
 </footer>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

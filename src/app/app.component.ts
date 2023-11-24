@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 	/**
 	 * Name of the application
 	 */
-	appName: string;
+	private _appName: string;
 
 	/**
 	 * Current year
@@ -22,8 +22,15 @@ export class AppComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
-		this.appName = 'Trainalytics';
+		this._setAppName();
 		this.currentYear = new Date().getFullYear().toString();
+	}
+
+	/**
+	 * Method to set the name of the application
+	 */
+	private _setAppName(): void {
+		this._appName = 'Trainalytics';
 	}
 
 	/**
@@ -31,6 +38,6 @@ export class AppComponent implements OnInit {
 	 * @returns the name of the application
 	 */
 	getAppName(): string {
-		return this.appName;
+		return this._appName;
 	}
 }
