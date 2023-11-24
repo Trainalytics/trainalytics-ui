@@ -179,7 +179,7 @@
 	<trainalytics-navbar></trainalytics-navbar>
 </header>
 
-<main class="main">
+<main class="app-main">
 	<div class="content">
 		<div class="left-side">
 			<svg
@@ -249,7 +249,7 @@
 					</clipPath>
 				</defs>
 			</svg>
-			<h1>Hello, {{ title }}</h1>
+			<h1>Hello, {{ appName }}</h1>
 			<p>Congratulations! Your app is running. 🎉</p>
 		</div>
 		<div
@@ -349,6 +349,10 @@
 		</div>
 	</div>
 </main>
+
+<footer class="app-footer">
+	<span>© {{ currentYear }} {{ appName }} Team</span>
+</footer>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

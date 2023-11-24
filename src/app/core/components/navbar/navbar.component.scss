@@ -1,3 +1,71 @@
-:host {
-	display: block;
+// navigation links
+.nav {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	margin-right: auto;
+	padding-left: 0;
+	overflow: hidden;
+	list-style: none;
+
+	// &__icon {
+	// 	margin-right: 0.5em;
+	// }
+
+	// &__link {
+	// 	display: flex;
+	// 	align-items: center;
+	// 	height: 100%;
+	// 	padding: 1em;
+	// 	border-right: 1px solid var(--color-bg-header);
+	// 	color: var(--color-text-body);
+	// 	text-decoration: none;
+
+	// 	&:hover,
+	// 	&:focus {
+	// 		background-color: var(--primary-color);
+	// 		color: var(--primary-color-text);
+	// 	}
+
+	// 	&--active {
+	// 		background-color: var(--primary-color);
+	// 		color: var(--primary-color-text);
+	// 	}
+	// }
+
+	&-addon {
+		display: flex;
+		align-items: center;
+		padding-left: 1em;
+	}
+
+	&-logo {
+		display: flex;
+		align-items: center;
+		padding: 0.5em;
+	}
+}
+
+.navbar {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: var(--color-bg-header-default);
+	box-shadow: var(--shadow);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: var(--color-text-body);
+}
+
+.app-name {
+	margin: 0;
+	font-size: 1.75rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-style: italic;
 }

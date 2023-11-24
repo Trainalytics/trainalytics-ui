@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	/**
 	 * Information about the connected user
 	 */
-	connectedUserInfo: UserInfo | undefined;
+	connectedUserInfo: UserInfo;
 
 	constructor(
 		private i18nService: I18nService,
