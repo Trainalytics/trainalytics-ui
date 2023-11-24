@@ -10,7 +10,7 @@
 				alt="Trainalytics logo"
 				height="40px"
 			/>
-			<p class="app-name">Trainalytics</p>
+			<p class="app-name">{{ appName }}</p>
 		</a>
 	</div>
 
@@ -25,6 +25,8 @@
 				data-tui="language-selector"
 			></p-dropdown> -->
 		</div>
-		{{ connectedUserInfo.username }}
+		<span class="user-name">
+			{{ connectedUserInfo.username }}
+		</span>
 	</div>
 </nav>

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { I18nService } from '@core/service/i18n.service';
 import { Lang } from '@models/lang.model';
 import { NavLink } from '@models/nav-link.model';
@@ -16,6 +16,12 @@ const navbarNavigation: Array<NavLink> = [];
 	styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit, OnDestroy {
+
+	/**
+	 * The application name
+	 */
+	@Input()
+	appName: string;
 
 	/**
 	 * The main navigation items in the header
