@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a new feature to help Trainalytics improve.
+title: "Feature: Title"
+labels: ["Status: Needs Triage"]
+body:
+    - type: textarea
+      attributes:
+          label: Describe the feature
+          description: A clear and concise description of what the feature is.
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: Why should this feature be in the Trainalytics ?
+          description: A clear and concise description of why you think this feature needs to be in Trainalytics.
+      validations:
+          required: false
+	- type: textarea
+      attributes:
+          label: Additional comments
+          description: Is there anything else that's important for the team to know ?
+      validations:
+          required: false
