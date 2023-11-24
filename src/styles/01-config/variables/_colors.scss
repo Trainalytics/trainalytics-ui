@@ -1,0 +1,30 @@
+// DEFAULT
+$color--primary: #0099ff;
+$color--primary-inverse: #fff;
+$color--primary-dark: #006eb7;
+
+$color--secondary: #607d8b;
+$color--secondary-inverse: #fff;
+
+// STATES
+$color--danger-bg: #fce6eb;
+$color--danger-border: #dc0032;
+$color--danger-text: #dc0032;
+
+$color--success-bg: #e6f3ee;
+$color--success-border: #008858;
+$color--success-text: #008858;
+
+$color--warning-bg: #fdf1e6;
+$color--warning-border: #e66e00;
+$color--warning-text: #e66e00;
+
+$color--info-bg: #e6f2fb;
+$color--info-border: #0078d2;
+$color--info-text: #0078d2;
+
+// CONTEXT
+$color--text-body: #4c4c4e;
+$color--bg-body: #ededed;
+$color--caption: var(--surface-500);
+$color--bg-panel: #fff;
