@@ -2,12 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { I18nService } from '@core/service/i18n.service';
 import { AccountService } from '@login/services/account.service';
-
-export class Account {
-	username: any;
-	email: any;
-	password: any;
-}
+import { UserInfo } from '@models/user-info.model';
 
 @Component({
 	selector: 'trainalytics-login-layout',
@@ -19,9 +14,7 @@ export class LoginLayoutComponent implements OnInit {
 	/**
 	 * List of the accounts
 	 */
-	accounts: any;
-
-	userAccount = new Account();
+	userAccount: UserInfo;
 
 	constructor(
 		private readonly _i18n: I18nService,
@@ -36,11 +29,11 @@ export class LoginLayoutComponent implements OnInit {
 
 	getAccountData(): void {
 		this._accountService.getAccountData()
-			.subscribe(res => this.accounts = res);
+			.subscribe(res => this.userAccount = res);
 	}
 
-	insertData() {
-		this._accountService.insertData(this.accounts)
+	insertData(userInfo: UserInfo) {
+		this._accountService.insertData(userInfo)
 			.subscribe(res => this.getAccountData());
 	}
 }

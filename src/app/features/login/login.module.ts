@@ -5,6 +5,8 @@ import { LoginLayoutComponent } from './components/login-layout/login-layout.com
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { PasswordModule } from 'primeng/password';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { InputTextModule } from 'primeng/inputtext';
 		FormsModule,
 		ReactiveFormsModule,
 		InputTextModule,
+		ButtonModule,
+		PasswordModule,
 	]
 })
 export class LoginModule { }

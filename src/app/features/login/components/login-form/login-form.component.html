@@ -1,1 +1,49 @@
-<p>login-form works!</p>
+<form
+	[formGroup]="form"
+	(ngSubmit)="submitForm($event)"
+	class="form"
+>
+	<div class="flex">
+		<div class="stacked-control col-12 col-sm-3">
+			<label
+				for="login-username"
+				class="form-label"
+				>Username</label
+			>
+			<input
+				id="login-username"
+				class="p-inputtext"
+				type="text"
+				formControlName="username"
+				autofocus
+			/>
+		</div>
+		<div class="stacked-control col-12 col-sm-3">
+			<label
+				for="login-email"
+				class="form-label"
+				>Email</label
+			>
+			<input
+				id="login-email"
+				class="p-inputtext"
+				type="text"
+				formControlName="email"
+				autofocus
+			/>
+		</div>
+		<div class="stacked-control col-12 col-sm-3">
+			<label
+				for="login-id"
+				class="form-label"
+				>Password</label
+			>
+			<p-password
+				formControlName="password"
+				[feedback]="false"
+				[toggleMask]="true"
+			/>
+		</div>
+		<p-button type="submit">Submit</p-button>
+	</div>
+</form>
