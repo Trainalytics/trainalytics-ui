@@ -24,7 +24,9 @@
 			"@models/*": ["src/app/models/*"],
 			"@core/*": ["src/app/core/*"],
 			"@assets/*": ["src/assets/*"],
-			"@testing/*": ["src/app/testing/*"]
+			"@testing/*": ["src/app/testing/*"],
+			"@config/*": ["src/app/config/*"],
+			"@login/*": ["src/app/features/login/*"]
 		}
 	},
 	"angularCompilerOptions": {
