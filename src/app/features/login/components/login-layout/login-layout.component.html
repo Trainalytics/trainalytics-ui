@@ -1,3 +1,54 @@
-<div class="login-lyout">
+<div class="login-layout">
 	<trainalytics-login-form></trainalytics-login-form>
+
+	<form (ngSubmit)="insertData()">
+		<div class="form-group">
+			<label for="name">Enter Name</label>
+			<input
+				type="text"
+				name="name"
+				class="form-control"
+				[(ngModel)]="userAccount.username"
+			/>
+		</div>
+
+		<div class="form-group">
+			<label for="name">Enter Email</label>
+			<input
+				type="text"
+				name="email"
+				class="form-control"
+				[(ngModel)]="userAccount.email"
+			/>
+		</div>
+
+		<div class="form-group">
+			<label for="name">Enter Password</label>
+			<input
+				type="password"
+				name="password"
+				class="form-control"
+				[(ngModel)]="userAccount.password"
+			/>
+		</div>
+
+		<button class="btn btn-primary btn-sm mt-4">Submit</button>
+	</form>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let acc of accounts">
+				<td>{{ acc.username }}</td>
+				<td>{{ acc.name }}</td>
+				<td>{{ acc.email }}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
