@@ -1,5 +1,7 @@
 {
-	"nav": {},
+	"nav": {
+		"login": "Login"
+	},
 	"primeng": {
 		"startsWith": "Beginnt mit",
 		"contains": "Enthält",
