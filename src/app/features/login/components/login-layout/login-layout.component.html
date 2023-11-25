@@ -1,7 +1,22 @@
 <div class="login-layout">
 	<trainalytics-login-form></trainalytics-login-form>
 
-	<form (ngSubmit)="insertData()">
+	<form (submit)="insertData()">
+		<div class="row align-items-end">
+			<div class="stacked-control col-12 col-sm-3">
+				<label
+					for="login-id"
+					class="form-label"
+					>Username</label
+				>
+				<input
+					id="login-id"
+					pInputText
+					type="text"
+					autofocus
+				/>
+			</div>
+		</div>
 		<div class="form-group">
 			<label for="name">Enter Name</label>
 			<input

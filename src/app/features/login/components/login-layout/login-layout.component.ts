@@ -31,14 +31,16 @@ export class LoginLayoutComponent implements OnInit {
 		this._titleService.setTitle('Trainalytics | ' + this._i18n.translate('nav.login'));
 	}
 	ngOnInit(): void {
-		this.getAccountData();
+		// this.getAccountData();
 	}
 
 	getAccountData(): void {
-		this._accountService.getAccountData().subscribe(res => this.accounts = res);
+		this._accountService.getAccountData()
+			.subscribe(res => this.accounts = res);
 	}
 
 	insertData() {
-		this._accountService.insertData(this.accounts).subscribe(res => this.getAccountData());
+		this._accountService.insertData(this.accounts)
+			.subscribe(res => this.getAccountData());
 	}
 }

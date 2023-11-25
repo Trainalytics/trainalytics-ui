@@ -6,5 +6,5 @@ export const routes: Routes = [
 		path: loginFragment,
 		loadChildren: () => import('@login/login.module').then(m => m.LoginModule),
 	},
-	{ path: '', redirectTo: '/', pathMatch: 'full' },
+	// { path: '', redirectTo: '/', pathMatch: 'full' },
 ];
