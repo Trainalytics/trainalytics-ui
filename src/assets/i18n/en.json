@@ -2,6 +2,9 @@
 	"nav": {
 		"login": "Login"
 	},
+	"errors": {
+		"fieldIsRequired": "This field is required."
+	},
 	"primeng": {
 		"startsWith": "Starts with",
 		"contains": "Contains",

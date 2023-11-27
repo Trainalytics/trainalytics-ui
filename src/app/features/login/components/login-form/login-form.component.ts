@@ -2,6 +2,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserInfo } from '@models/user-info.model';
 
+/**
+ * Interface for the login form
+ */
 interface LoginForm {
 	username: FormControl<string>;
 	email: FormControl<string>;
@@ -26,7 +29,9 @@ export class LoginFormComponent implements OnInit {
 	 */
 	form: FormGroup<LoginForm>;
 
-	constructor(private readonly _fb: FormBuilder) { }
+	constructor(
+		private readonly _fb: FormBuilder
+	) { }
 
 	ngOnInit(): void {
 		this._initForm();
@@ -52,7 +57,7 @@ export class LoginFormComponent implements OnInit {
 			...this.form.value,
 		} as UserInfo;
 
-		console.log(this.form.valid);
+		console.log(formValues);
 		// this.accountCreation.emit(formValues);
 	}
 }

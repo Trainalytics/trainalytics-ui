@@ -1,3 +1,4 @@
+<!-- *transloco="let t" -->
 <form
 	[formGroup]="form"
 	(ngSubmit)="submitForm($event)"
@@ -15,14 +16,17 @@
 				class="p-inputtext"
 				type="text"
 				formControlName="username"
+				[ngClass]="{
+					'ng-dirty': form.get('username').touched && !form.get('username').valid
+				}"
 			/>
 			<small
-				*ngIf="form.get('username').invalid && form.get('username').touched"
+				*ngIf="!form.get('username').valid && form.get('username').touched"
 				id="username-help"
 				class="p-error"
 			>
-				<!-- TODO : Add translation + make the same for all input-->
-				Username is not available.
+				<!-- {{ t("error.fieldIsRequired") }} -->
+				This field is required.
 			</small>
 		</div>
 		<div class="stacked-control">
@@ -36,7 +40,18 @@
 				class="p-inputtext"
 				type="text"
 				formControlName="email"
+				[ngClass]="{
+					'ng-dirty': form.get('email').touched && !form.get('email').valid
+				}"
 			/>
+			<small
+				*ngIf="!form.get('email').valid && form.get('email').touched"
+				id="email-help"
+				class="p-error"
+			>
+				<!-- {{ t("error.fieldIsRequired") }} -->
+				This field is required.
+			</small>
 		</div>
 		<div class="stacked-control">
 			<label
@@ -48,7 +63,18 @@
 				formControlName="password"
 				[feedback]="false"
 				[toggleMask]="true"
+				[ngClass]="{
+					'ng-dirty': form.get('password').touched && !form.get('password').valid
+				}"
 			/>
+			<small
+				*ngIf="!form.get('password').valid && form.get('password').touched"
+				id="password-help"
+				class="p-error"
+			>
+				<!-- {{ t("error.fieldIsRequired") }} -->
+				This field is required.
+			</small>
 		</div>
 		<p-button type="submit">Submit</p-button>
 	</div>
