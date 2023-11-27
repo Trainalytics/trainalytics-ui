@@ -26,7 +26,30 @@ export class AccountService {
 		// return this._httpClient.get('http://localhost:8000/api/accout/');
 	}
 
-	insertData(data: any) {
+	/**
+	 * Method to create an account
+	 * @param data - account information
+	 * @returns - the response of the creation
+	 */
+	createAccount(data: any) {
 		return this._httpClient.post('http://localhost:8000/api/users/', data);
+	}
+
+	/**
+	 * Method to update an account
+	 * @param data - account information
+	 * @returns - the response of the update
+	 */
+	updateAccount(data: any) {
+		return this._httpClient.put('http://localhost:8000/api/users/', data);
+	}
+
+	/**
+	 * Method to delete an account
+	 * @param data - account information
+	 * @returns - the response of the delete
+	 */
+	deleteAccount(data: any) {
+		return this._httpClient.delete('http://localhost:8000/api/users/', data);
 	}
 }

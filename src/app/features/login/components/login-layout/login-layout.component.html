@@ -1,3 +1,4 @@
-<div class="login-layout container">
-	<trainalytics-login-form (loginCreation)="insertData($event)"></trainalytics-login-form>
+<div class="login-layout">
+	<!-- TODO : Create a registration form and use an NgIf to say which form has to be displayed -->
+	<trainalytics-login-form (accountCreation)="createAccount($event)"></trainalytics-login-form>
 </div>

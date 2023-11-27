@@ -27,13 +27,40 @@ export class LoginLayoutComponent implements OnInit {
 		// this.getAccountData();
 	}
 
+	/**
+	 * Get the data of a specific account
+	 */
 	getAccountData(): void {
 		this._accountService.getAccountData()
 			.subscribe(res => this.userAccount = res);
 	}
 
-	insertData(userInfo: UserInfo) {
-		this._accountService.insertData(userInfo)
+	/**
+	 * Create an account with specific values
+	 * @param userInfo - information about the user
+	 */
+	createAccount(userInfo: UserInfo) {
+		this._accountService.createAccount(userInfo)
+			.subscribe(res => this.getAccountData());
+	}
+
+	/**
+	 * Update an account with specific values
+	 * @param userInfo - information used to update the user information
+	 */
+	updateAccount(userInfo: UserInfo) {
+		this._accountService.createAccount(userInfo)
+			.subscribe(res => this.getAccountData());
+	}
+
+	/**
+	 * Delete an account with specific values
+	 * @param userInfo - information of the user
+	 */
+	deleteAccount(userInfo: UserInfo) {
+		// TODO : Send the userInfo DTO and make the request to find which user is it on the back or directly send the id from the front to the api ?
+
+		this._accountService.deleteAccount(userInfo)
 			.subscribe(res => this.getAccountData());
 	}
 }

@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
 	 * The event which emit the form values to the parent
 	 */
 	@Output()
-	loginCreation = new EventEmitter<UserInfo>();
+	accountCreation = new EventEmitter<UserInfo>();
 
 	/**
 	 * Form for login
@@ -43,10 +43,16 @@ export class LoginFormComponent implements OnInit {
 	submitForm($event: any) {
 		console.log(this.form);
 
+		// if the form is invalid
+		if (!this.form.valid) {
+			return;
+		}
+
 		const formValues = {
 			...this.form.value,
 		} as UserInfo;
 
-		// this.loginCreation.emit(formValues);
+		console.log(this.form.valid);
+		// this.accountCreation.emit(formValues);
 	}
 }
