@@ -16,6 +16,14 @@
 				type="text"
 				formControlName="username"
 			/>
+			<small
+				*ngIf="form.get('username').invalid && form.get('username').touched"
+				id="username-help"
+				class="p-error"
+			>
+				<!-- TODO : Add translation + make the same for all input-->
+				Username is not available.
+			</small>
 		</div>
 		<div class="stacked-control">
 			<label
