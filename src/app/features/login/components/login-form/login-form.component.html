@@ -1,5 +1,5 @@
-<!-- *transloco="let t" -->
 <form
+	*transloco="let t"
 	[formGroup]="form"
 	(ngSubmit)="submitForm($event)"
 	class="form"
@@ -9,7 +9,7 @@
 			<label
 				for="username"
 				class="form-label"
-				>Username</label
+				>{{ t("general_informations.username") }}</label
 			>
 			<input
 				id="username"
@@ -25,15 +25,14 @@
 				id="username-help"
 				class="p-error"
 			>
-				<!-- {{ t("error.fieldIsRequired") }} -->
-				This field is required.
+				{{ t("errors.field_is_required") }}
 			</small>
 		</div>
 		<div class="stacked-control">
 			<label
 				for="email"
 				class="form-label"
-				>Email</label
+				>{{ t("general_informations.email") }}</label
 			>
 			<input
 				id="email"
@@ -49,15 +48,14 @@
 				id="email-help"
 				class="p-error"
 			>
-				<!-- {{ t("error.fieldIsRequired") }} -->
-				This field is required.
+				{{ t("errors.field_is_required") }}
 			</small>
 		</div>
 		<div class="stacked-control">
 			<label
 				for="password"
 				class="form-label"
-				>Password</label
+				>{{ t("general_informations.password") }}</label
 			>
 			<p-password
 				formControlName="password"
@@ -72,10 +70,9 @@
 				id="password-help"
 				class="p-error"
 			>
-				<!-- {{ t("error.fieldIsRequired") }} -->
-				This field is required.
+				{{ t("errors.field_is_required") }}
 			</small>
 		</div>
-		<p-button type="submit">Submit</p-button>
+		<p-button type="submit">{{ t("actions.submit") }}</p-button>
 	</div>
 </form>

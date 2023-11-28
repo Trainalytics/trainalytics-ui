@@ -2,8 +2,36 @@
 	"nav": {
 		"login": "Login"
 	},
+	"general_informations": {
+		"username": "Username",
+		"password": "Password",
+		"email": "Email"
+	},
 	"errors": {
-		"fieldIsRequired": "This field is required."
+		"field_is_required": "This field is required."
+	},
+	"actions": {
+		"continue": "Continue",
+		"move_up": "Move up",
+		"move_down": "Move down",
+		"reload": "Reload",
+		"save": "Save",
+		"close": "Close",
+		"close_all": "Close all",
+		"view": "View",
+		"edit": "Edit",
+		"download": "Download",
+		"add": "Add",
+		"cut": "Cut",
+		"duplicate": "Duplicate",
+		"delete": "Delete",
+		"cancel": "Cancel",
+		"import": "Import",
+		"validate": "Validate",
+		"reject": "Reject",
+		"retry": "Retry",
+		"modify": "Modify",
+		"submit": "Submit"
 	},
 	"primeng": {
 		"startsWith": "Starts with",

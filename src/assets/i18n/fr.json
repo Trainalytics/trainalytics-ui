@@ -2,8 +2,36 @@
 	"nav": {
 		"login": "Login"
 	},
+	"general_informations": {
+		"username": "Nom d'utilisateur",
+		"password": "Mot de passe",
+		"email": "Email"
+	},
 	"errors": {
-		"fieldIsRequired": "Ce champs est requis."
+		"field_is_required": "Ce champs est requis."
+	},
+	"actions": {
+		"continue": "Continuer",
+		"move_up": "Remonter",
+		"move_down": "Descendre",
+		"reload": "Recharger",
+		"save": "Sauver",
+		"close": "Fermer",
+		"close_all": "Fermer tout",
+		"view": "Consulter",
+		"edit": "Éditer",
+		"download": "Télécharger",
+		"add": "Ajouter",
+		"cut": "Découper",
+		"duplicate": "Dupliquer",
+		"delete": "Supprimer",
+		"cancel": "Annuler",
+		"import": "Importer",
+		"validate": "Valider",
+		"reject": "Rejeter",
+		"retry": "Réessayer",
+		"modify": "Modifier",
+		"submit": "Soumettre"
 	},
 	"primeng": {
 		"startsWith": "Commence par",
