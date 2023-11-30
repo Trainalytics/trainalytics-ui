@@ -1,0 +1,78 @@
+<form
+	*transloco="let t"
+	[formGroup]="form"
+	(ngSubmit)="submitForm($event)"
+	class="form"
+>
+	<div class="flex">
+		<div class="stacked-control">
+			<label
+				for="username"
+				class="form-label"
+				>{{ t("general_informations.username") }}</label
+			>
+			<input
+				id="username"
+				class="p-inputtext"
+				type="text"
+				formControlName="username"
+				[ngClass]="{
+					'ng-dirty': form.get('username').touched && !form.get('username').valid
+				}"
+			/>
+			<small
+				*ngIf="!form.get('username').valid && form.get('username').touched"
+				id="username-help"
+				class="p-error"
+			>
+				{{ t("errors.field_is_required") }}
+			</small>
+		</div>
+		<div class="stacked-control">
+			<label
+				for="email"
+				class="form-label"
+				>{{ t("general_informations.email") }}</label
+			>
+			<input
+				id="email"
+				class="p-inputtext"
+				type="text"
+				formControlName="email"
+				[ngClass]="{
+					'ng-dirty': form.get('email').touched && !form.get('email').valid
+				}"
+			/>
+			<small
+				*ngIf="!form.get('email').valid && form.get('email').touched"
+				id="email-help"
+				class="p-error"
+			>
+				{{ t("errors.field_is_required") }}
+			</small>
+		</div>
+		<div class="stacked-control">
+			<label
+				for="password"
+				class="form-label"
+				>{{ t("general_informations.password") }}</label
+			>
+			<p-password
+				formControlName="password"
+				[feedback]="false"
+				[toggleMask]="true"
+				[ngClass]="{
+					'ng-dirty': form.get('password').touched && !form.get('password').valid
+				}"
+			/>
+			<small
+				*ngIf="!form.get('password').valid && form.get('password').touched"
+				id="password-help"
+				class="p-error"
+			>
+				{{ t("errors.field_is_required") }}
+			</small>
+		</div>
+		<p-button type="submit">{{ t("actions.submit") }}</p-button>
+	</div>
+</form>

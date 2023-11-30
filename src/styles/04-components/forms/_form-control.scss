@@ -1,0 +1,22 @@
+// input is next to the label
+.inline-control {
+	display: flex;
+	margin-bottom: 1em;
+
+	.form-label {
+		display: inline-flex;
+		margin-right: 1em;
+	}
+}
+
+// label is above the input
+.stacked-control {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1em;
+
+	.form-label {
+		display: inline-flex;
+		margin-bottom: 0.35rem;
+	}
+}
