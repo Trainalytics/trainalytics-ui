@@ -50,9 +50,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.mainNavigation = navbarNavigation;
 		this.connectedUserInfo = {
-			username: 'dieperid',
+			sub: 'dieperid',
 			name: 'David',
 			email: 'test@gmail.com',
+			picture: ''
 		};
 		const languages = this.i18nService.getAvailableLangs();
 		this.setDropdownLangValue(languages);

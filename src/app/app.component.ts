@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nService } from '@core/service/i18n.service';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
 	selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
 	currentYear: string;
 
 	constructor(
-		private readonly i18nService: I18nService
+		private readonly i18nService: I18nService,
+		private readonly authService: AuthService,
 	) { }
 
 	ngOnInit(): void {
