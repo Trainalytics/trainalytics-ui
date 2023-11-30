@@ -5,6 +5,8 @@ import { RouterModule } from "@angular/router";
 import { TranslocoRootModule } from "./i18n/transloco-root.module";
 import { AuthService } from "../auth/services/auth.service";
 import { AuthModule } from "../auth/auth.module";
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
 	declarations: [NavbarComponent],
@@ -12,7 +14,9 @@ import { AuthModule } from "../auth/auth.module";
 		CommonModule,
 		RouterModule,
 		TranslocoRootModule,
-		AuthModule
+		AuthModule,
+		DropdownModule,
+		FormsModule
 	],
 	exports: [NavbarComponent],
 	providers: [AuthService],

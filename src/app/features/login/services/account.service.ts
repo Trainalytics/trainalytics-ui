@@ -21,6 +21,7 @@ export class AccountService {
 			name: 'David',
 			email: 'test@gmail.com',
 			picture: '',
+			lang: 'fr'
 		};
 
 		return userInfo;

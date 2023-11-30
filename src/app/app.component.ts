@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nService } from '@core/service/i18n.service';
 import { AuthService } from './auth/services/auth.service';
+import { UserInfo } from '@models/user-info.model';
 
 @Component({
 	selector: 'app-root',
@@ -17,6 +18,11 @@ export class AppComponent implements OnInit {
 	 * Current year
 	 */
 	currentYear: string;
+
+	/**
+	 * Information about the user
+	 */
+	userInfo?: UserInfo;
 
 	constructor(
 		private readonly i18nService: I18nService,
@@ -41,5 +47,13 @@ export class AppComponent implements OnInit {
 	 */
 	getAppName(): string {
 		return this._appName;
+	}
+
+	isLoggedIn(): boolean {
+		return this.authService.isLoggedIn();
+	}
+
+	logout(): void {
+		this.authService.logout();
 	}
 }

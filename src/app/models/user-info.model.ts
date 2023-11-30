@@ -15,4 +15,9 @@ export interface UserInfo {
 	 * Picture address of the user
 	 */
 	picture: string;
+	/**
+	 * The language of the connected user
+	 * @example // fr
+	 */
+	lang: string;
 }

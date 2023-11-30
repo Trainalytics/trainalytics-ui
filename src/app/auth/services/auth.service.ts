@@ -1,16 +1,32 @@
 import { Injectable } from '@angular/core';
-import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
+import { AuthConfig, OAuthErrorEvent, OAuthEvent, OAuthInfoEvent, OAuthService } from 'angular-oauth2-oidc';
 import { oAuthBaseConfig } from '../auth.config';
+import { UserInfo } from '@models/user-info.model';
+import { Subject, Subscription } from 'rxjs';
+import { IdToken } from '@models/id-token.model';
+
+/**
+ * This is the key of the storage item where the decoded idToken is saved
+ */
+const decodedIdTokenKey = 'id_token_claims_obj';
+
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
+	/**
+	 * Subscriptions done in the service for one shot unsubscribe
+	 */
+	private subs = new Subscription();
+
+	userInfo: UserInfo;
 
 	constructor(
 		private readonly _oAuthService: OAuthService
 	) {
 		this.setup();
+		// this.handleOAuthEvents();
 	}
 
 	/**
@@ -22,7 +38,10 @@ export class AuthService {
 			...oAuthBaseConfig,
 		};
 
+		console.log(oAuthConfig);
+
 		this._oAuthService.configure(oAuthConfig);
+		this._oAuthService.logoutUrl = "https://www.google.com/accounts/Logout";
 
 		return this.login();
 	}
@@ -32,19 +51,92 @@ export class AuthService {
 	 * @returns the promise of the oauth login
 	 */
 	private login(): Promise<void> {
-		return this._oAuthService
-			.loadDiscoveryDocument().then(() => {
-				this._oAuthService.tryLoginImplicitFlow()
-					.then(() => {
-						if (!this._oAuthService.hasValidAccessToken()) {
-							this._oAuthService.initLoginFlow();
-						} else {
-							this._oAuthService.loadUserProfile()
-								.then(userProfile => {
-									console.log(JSON.stringify(userProfile));
-								});
-						}
-					});
+		return this._oAuthService.loadDiscoveryDocumentAndLogin()
+			.then(() => this._oAuthService.setupAutomaticSilentRefresh({}, 'access_token', false))
+			.catch(e => {
+				if (e instanceof OAuthErrorEvent && e.type === 'invalid_nonce_in_state') {
+					this._oAuthService.silentRefresh();
+				}
 			});
 	}
+
+	isLoggedIn(): boolean {
+		return this._oAuthService.hasValidAccessToken();
+	}
+
+	logout(): void {
+		this._oAuthService.logOut();
+	}
+
+	/**
+	 * Handle an expired access token event
+	 */
+	handleExpiredAccessToken(): void {
+		sessionStorage.clear();
+		window.location.reload();
+	}
+
+	/**
+	 * Get the info about the connected user from the stored idToken.
+	 * This should never be called before authentication process has succeeded
+	 * @returns the info about the user or null if it was not found
+	 * @throws if method is called before authentication is finished
+	 */
+	getUserInfo(): UserInfo {
+		const rawToken = sessionStorage.getItem(decodedIdTokenKey);
+		if (!rawToken) {
+			// as auth is done at app init, we should never reach this
+			throw new Error(
+				`Method to get connected user info was called before authentication was finished`,
+			);
+		}
+
+		const parsedToken = JSON.parse(rawToken) as IdToken;
+		return {
+			name: parsedToken.name,
+			sub: parsedToken.sub,
+			email: parsedToken.email,
+			picture: parsedToken.picture,
+			lang: parsedToken.language,
+		};
+	}
+
+	/**
+	 * Subscribe to oAuth events and handle the one we need
+	 * @see https://manfredsteyer.github.io/angular-oauth2-oidc/docs/classes/OAuthEvent.html#source
+	 */
+	// private handleOAuthEvents(): void {
+	// 	const tokenRefreshErrorMaxTry = 1;
+	// 	let tokenRefreshErrorCount = 0;
+	// 	this.subs.add(
+	// 		this._oAuthService.events.subscribe({
+	// 			next: (evt: OAuthEvent) => {
+	// 				if (
+	// 					evt.type === 'token_expires' &&
+	// 					(evt as OAuthInfoEvent).info === 'access_token'
+	// 				) {
+	// 					this.handleExpiredAccessToken();
+	// 				} else if (evt.type === 'discovery_document_load_error') {
+	// 					throw new Error(
+	// 						'Impossible to load the auth document from the server',
+	// 					);
+	// 				} else if (
+	// 					evt.type === 'token_received' &&
+	// 					(evt as OAuthInfoEvent).info === 'access_token'
+	// 				) {
+	// 					tokenRefreshErrorCount = 0;
+	// 				} else if (evt.type === 'silent_refresh_error') {
+	// 					if (tokenRefreshErrorCount >= tokenRefreshErrorMaxTry) {
+	// 						return;
+	// 					}
+	// 					tokenRefreshErrorCount++;
+	// 					this.login();
+	// 				}
+	// 			},
+	// 			error: (_errEvt: OAuthErrorEvent) => {
+	// 				this.login();
+	// 			},
+	// 		}),
+	// 	);
+	// }
 }

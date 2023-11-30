@@ -9,11 +9,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 	imports: [
 		CommonModule,
 		HttpClientModule,
-		OAuthModule.forRoot({
-			resourceServer: {
-				sendAccessToken: true,
-			}
-		}),
+		OAuthModule.forRoot(),
 	]
 })
 export class AuthModule { }
