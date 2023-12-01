@@ -9,8 +9,5 @@ export const oAuthBaseConfig: AuthConfig = {
 	scope: 'openid profile email',
 	showDebugInformation: true,
 	logoutUrl: 'https://www.google.com/accounts/Logout',
-	responseType: 'code',
-	useSilentRefresh: true,
-	timeoutFactor: .75,
 	dummyClientSecret: '',
 }
