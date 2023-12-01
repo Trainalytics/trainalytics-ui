@@ -12,4 +12,5 @@ export const oAuthBaseConfig: AuthConfig = {
 	responseType: 'code',
 	useSilentRefresh: true,
 	timeoutFactor: .75,
+	dummyClientSecret: '',
 }
