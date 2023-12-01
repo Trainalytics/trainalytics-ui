@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { I18nService } from '@core/service/i18n.service';
+import { I18nService } from '@core/services/i18n.service';
 import { AuthService } from './auth/services/auth.service';
 import { UserInfo } from '@models/user-info.model';
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { I18nService } from '@core/service/i18n.service';
+import { I18nService } from '@core/services/i18n.service';
 import { Lang } from '@models/lang.model';
 import { NavLink } from '@models/nav-link.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
