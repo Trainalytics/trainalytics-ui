@@ -1,47 +1,51 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { AuthConfig, OAuthErrorEvent, OAuthEvent, OAuthInfoEvent, OAuthService } from 'angular-oauth2-oidc';
 import { oAuthBaseConfig } from '../auth.config';
 import { UserInfo } from '@models/user-info.model';
 import { Subject, Subscription } from 'rxjs';
 import { IdToken } from '@models/id-token.model';
+import { EnvInfo } from '@models/env-info.model';
 
 /**
  * This is the key of the storage item where the decoded idToken is saved
  */
 const decodedIdTokenKey = 'id_token_claims_obj';
 
-
 @Injectable({
 	providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnDestroy {
 	/**
 	 * Subscriptions done in the service for one shot unsubscribe
 	 */
 	private subs = new Subscription();
 
-	userInfo: UserInfo;
-
 	constructor(
 		private readonly _oAuthService: OAuthService
 	) {
-		this.setup();
-		// this.handleOAuthEvents();
+		this.handleOAuthEvents();
 	}
 
 	/**
-	 * Setup the auth process and login process
+	 * @override
+	 */
+	ngOnDestroy(): void {
+		this.subs.unsubscribe();
+	}
+
+	/**
+	 * Setup the auth process and login
+	 * @param config - the configuration object with the url google
 	 * @returns a promise of the auth process
 	 */
-	setup(): Promise<void> {
+	setup(config: EnvInfo): Promise<void> {
 		const oAuthConfig: AuthConfig = {
 			...oAuthBaseConfig,
+			issuer: config.authIssuer,
+			clientId: config.authClientId,
 		};
 
-		console.log(oAuthConfig);
-
 		this._oAuthService.configure(oAuthConfig);
-		this._oAuthService.logoutUrl = "https://www.google.com/accounts/Logout";
 
 		return this.login();
 	}
@@ -105,38 +109,38 @@ export class AuthService {
 	 * Subscribe to oAuth events and handle the one we need
 	 * @see https://manfredsteyer.github.io/angular-oauth2-oidc/docs/classes/OAuthEvent.html#source
 	 */
-	// private handleOAuthEvents(): void {
-	// 	const tokenRefreshErrorMaxTry = 1;
-	// 	let tokenRefreshErrorCount = 0;
-	// 	this.subs.add(
-	// 		this._oAuthService.events.subscribe({
-	// 			next: (evt: OAuthEvent) => {
-	// 				if (
-	// 					evt.type === 'token_expires' &&
-	// 					(evt as OAuthInfoEvent).info === 'access_token'
-	// 				) {
-	// 					this.handleExpiredAccessToken();
-	// 				} else if (evt.type === 'discovery_document_load_error') {
-	// 					throw new Error(
-	// 						'Impossible to load the auth document from the server',
-	// 					);
-	// 				} else if (
-	// 					evt.type === 'token_received' &&
-	// 					(evt as OAuthInfoEvent).info === 'access_token'
-	// 				) {
-	// 					tokenRefreshErrorCount = 0;
-	// 				} else if (evt.type === 'silent_refresh_error') {
-	// 					if (tokenRefreshErrorCount >= tokenRefreshErrorMaxTry) {
-	// 						return;
-	// 					}
-	// 					tokenRefreshErrorCount++;
-	// 					this.login();
-	// 				}
-	// 			},
-	// 			error: (_errEvt: OAuthErrorEvent) => {
-	// 				this.login();
-	// 			},
-	// 		}),
-	// 	);
-	// }
+	private handleOAuthEvents(): void {
+		const tokenRefreshErrorMaxTry = 1;
+		let tokenRefreshErrorCount = 0;
+		this.subs.add(
+			this._oAuthService.events.subscribe({
+				next: (evt: OAuthEvent) => {
+					if (
+						evt.type === 'token_expires' &&
+						(evt as OAuthInfoEvent).info === 'access_token'
+					) {
+						this.handleExpiredAccessToken();
+					} else if (evt.type === 'discovery_document_load_error') {
+						throw new Error(
+							'Impossible to load the auth document from the server',
+						);
+					} else if (
+						evt.type === 'token_received' &&
+						(evt as OAuthInfoEvent).info === 'access_token'
+					) {
+						tokenRefreshErrorCount = 0;
+					} else if (evt.type === 'silent_refresh_error') {
+						if (tokenRefreshErrorCount >= tokenRefreshErrorMaxTry) {
+							return;
+						}
+						tokenRefreshErrorCount++;
+						this.login();
+					}
+				},
+				error: (_errEvt: OAuthErrorEvent) => {
+					this.login();
+				},
+			}),
+		);
+	}
 }

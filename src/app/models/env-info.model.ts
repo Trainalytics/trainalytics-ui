@@ -16,4 +16,9 @@ export interface EnvInfo {
 	 * Url of the trainalytics api
 	 */
 	trainalyticsApi: string;
+	/**
+	 * The list of urls which will need the token to be added in the headers by the interceptors
+	 * @see https://github.com/manfredsteyer/angular-oauth2-oidc/blob/master/docs-src/interceptors.md
+	 */
+	authAllowedUrl: Array<string>;
 }

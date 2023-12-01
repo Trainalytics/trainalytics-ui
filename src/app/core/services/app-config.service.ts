@@ -13,16 +13,27 @@ export class AppConfigService {
 	 */
 	readonly appVersion = environment.version;
 
-	envInfo: EnvInfo;
+	/**
+	 * Configuration of the current environment
+	 */
+	appConfig: EnvInfo;
 
 	constructor(
 		private readonly httpClient: HttpClient
 	) { }
 
+	/**
+	 *Load the configuration from the env.json file
+	 * @returns the environment configuration
+	 */
 	loadAppConfig(): Observable<EnvInfo> {
-		return this.httpClient.get<EnvInfo>(`/config/env.json?version=${this.appVersion}`)
+		// return this.httpClient.get<EnvInfo>(`/config/env.json?version=${this.appVersion}`)
+		// 	.pipe(
+		// 		tap((config: EnvInfo) => this.appConfig = config)
+		// 	)
+		return this.httpClient.get<EnvInfo>(`/config/env.json`)
 			.pipe(
-				tap((config: EnvInfo) => this.envInfo = config)
+				tap((config: EnvInfo) => this.appConfig = config)
 			)
 	}
 }

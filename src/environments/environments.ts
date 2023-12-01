@@ -1,3 +1,4 @@
+declare const require: any;
 const packagejson = require('../../package.json');
 
 export const environment = {
