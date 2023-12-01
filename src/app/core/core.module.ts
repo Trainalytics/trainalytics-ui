@@ -19,7 +19,7 @@ import { appInitializerFactory } from "@config/initializers/app.initializer";
 		TranslocoRootModule,
 		AuthModule,
 		DropdownModule,
-		FormsModule
+		FormsModule,
 	],
 	exports: [NavbarComponent],
 	providers: [

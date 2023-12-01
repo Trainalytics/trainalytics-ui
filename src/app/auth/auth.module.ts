@@ -10,12 +10,12 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 		CommonModule,
 		HttpClientModule,
 		OAuthModule.forRoot(
-			// 	{
-			// 	resourceServer: {
-			// 		allowedUrls: [], // this param is set from the loaded config at APP_INITIALIZER level
-			// 		sendAccessToken: true,
-			// 	},
-			// }
+			{
+				resourceServer: {
+					allowedUrls: [], // this param is set from the loaded config at APP_INITIALIZER level
+					sendAccessToken: true,
+				},
+			}
 		),
 	]
 })

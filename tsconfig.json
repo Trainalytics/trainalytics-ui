@@ -27,13 +27,15 @@
 			"@testing/*": ["src/app/testing/*"],
 			"@config/*": ["src/app/config/*"],
 			"@login/*": ["src/app/features/login/*"],
-			"@auth/*": ["src/app/auth/*"]
+			"@auth/*": ["src/app/auth/*"],
+			"@shared/*": ["src/app/shared/*"]
 		}
 	},
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,
 		"strictInjectionParameters": true,
 		"strictInputAccessModifiers": true,
-		"strictTemplates": true
+		"strictTemplates": true,
+		"resolveJsonModule": true
 	}
 }
