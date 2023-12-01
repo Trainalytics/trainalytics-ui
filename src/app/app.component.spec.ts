@@ -19,6 +19,7 @@ describe('AppComponent', () => {
 			'loadDiscoveryDocumentAndLogin',
 			'getIdentityClaims',
 			'setupAutomaticSilentRefresh',
+			'hasValidAccessToken'
 		], {
 			events: of({ type: 'unit-test' }),
 		});
@@ -33,6 +34,7 @@ describe('AppComponent', () => {
 				MockComponent(NavbarComponent),
 			],
 			providers: [
+				{ provide: OAuthService, useValue: spy },
 			],
 		}).compileComponents();
 	});

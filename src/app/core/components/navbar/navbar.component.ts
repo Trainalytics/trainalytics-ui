@@ -16,7 +16,7 @@ const navbarNavigation: Array<NavLink> = [];
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent implements OnInit, OnDestroy {
+export class NavbarComponent implements OnInit {
 	/**
 	 * The application name
 	 */
@@ -54,10 +54,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
 		const languages = this.i18nService.getAvailableLangs();
 		this.setDropdownLangValue(languages);
 		this.currentLang = this.i18nService.getActiveLang();
-	}
-
-	ngOnDestroy(): void {
-		throw new Error('Method not implemented.');
 	}
 
 	/**
