@@ -103,8 +103,9 @@ export class NavbarComponent implements OnInit {
 		const languages = this.i18nService.getAvailableLangs();
 		this.accountNavigation = [
 			{
-				label: this.i18nService.translate('actions.continue'),
-				icon: 'pi pi-fw pi-home',
+				// label: this.i18nService.translate('actions.continue'),
+				label: 'Settings',
+				icon: 'pi pi-cog',
 				routerLink: '/',
 			},
 			{
