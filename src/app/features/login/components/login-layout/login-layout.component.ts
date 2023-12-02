@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { I18nService } from '@core/service/i18n.service';
+import { I18nService } from '@core/services/i18n.service';
 import { AccountService } from '@login/services/account.service';
 import { UserInfo } from '@models/user-info.model';
 

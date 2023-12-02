@@ -5,6 +5,8 @@ import { NavbarComponent } from '@core/components/navbar/navbar.component';
 import { MockComponent } from 'ng-mocks';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { OAuthService } from 'angular-oauth2-oidc';
+import { of } from 'rxjs';
 
 
 describe('AppComponent', () => {
@@ -12,6 +14,15 @@ describe('AppComponent', () => {
 	let fixture: ComponentFixture<AppComponent>;
 
 	beforeEach(async () => {
+		const spy = jasmine.createSpyObj('OAuthService', [
+			'configure',
+			'loadDiscoveryDocumentAndLogin',
+			'getIdentityClaims',
+			'setupAutomaticSilentRefresh',
+			'hasValidAccessToken'
+		], {
+			events: of({ type: 'unit-test' }),
+		});
 		await TestBed.configureTestingModule({
 			imports: [
 				translocoTestingModuleFactory(),
@@ -23,6 +34,7 @@ describe('AppComponent', () => {
 				MockComponent(NavbarComponent),
 			],
 			providers: [
+				{ provide: OAuthService, useValue: spy },
 			],
 		}).compileComponents();
 	});
@@ -35,19 +47,5 @@ describe('AppComponent', () => {
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
-	});
-
-	it('should getAppName', () => {
-		const result = component.getAppName();
-		const expectedResult = 'Trainalytics';
-
-		expect(result).toEqual(expectedResult);
-	});
-
-	it('should setAppName', () => {
-		component['_setAppName']('Trainalytics');
-		const expectedResult = 'Trainalytics';
-
-		expect(component['_appName']).toEqual(expectedResult);
 	});
 });

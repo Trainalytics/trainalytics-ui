@@ -1,14 +1,19 @@
 <header>
-	<trainalytics-navbar [appName]="getAppName()"></trainalytics-navbar>
+	<trainalytics-navbar [appName]="appName"></trainalytics-navbar>
 </header>
 
 <main
 	class="app-main"
 	role="main"
 >
+	<div *ngIf="isLoggedIn()">
+		<div class="container">
+			<button (click)="logout()">Logout from Google</button>
+		</div>
+	</div>
 	<router-outlet></router-outlet>
 </main>
 
 <footer class="app-footer">
-	<span>© {{ currentYear }} {{ getAppName() }} Team</span>
+	<span>© {{ currentYear }} {{ appName }} Team</span>
 </footer>

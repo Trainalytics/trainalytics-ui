@@ -7,7 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
-import { TranslocoModule } from '@ngneat/transloco';
+import { CoreModule } from '@core/core.module';
+import { SharedModule } from '@shared/shared.module';
 
 
 @NgModule({
@@ -19,11 +20,11 @@ import { TranslocoModule } from '@ngneat/transloco';
 		CommonModule,
 		LoginRoutingModule,
 		FormsModule,
-		ReactiveFormsModule,
 		InputTextModule,
 		ButtonModule,
 		PasswordModule,
-		TranslocoModule,
+		SharedModule,
+		CoreModule
 	]
 })
 export class LoginModule { }

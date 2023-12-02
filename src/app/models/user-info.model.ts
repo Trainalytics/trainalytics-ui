@@ -1,14 +1,23 @@
 export interface UserInfo {
 	/**
-	 * Username of the user
+	 * Sub of the user (identifier)
 	 */
-	username: string;
+	sub: string;
+	/**
+	 * Email of the user
+	 */
+	email: string;
 	/**
 	 * Full name of the user
 	 */
 	name: string;
 	/**
-	 * Email address of the user
+	 * Picture address of the user
 	 */
-	email: string;
+	picture: string;
+	/**
+	 * The language of the connected user
+	 * @example // fr
+	 */
+	lang: string;
 }

@@ -1,9 +1,10 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { I18nService } from '@core/service/i18n.service';
+import { I18nService } from '@core/services/i18n.service';
 import { Lang } from '@models/lang.model';
 import { NavLink } from '@models/nav-link.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
 import { UserInfo } from '@models/user-info.model';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 /**
  * Array that contains each tab of the navbar
@@ -15,8 +16,7 @@ const navbarNavigation: Array<NavLink> = [];
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent implements OnInit, OnDestroy {
-
+export class NavbarComponent implements OnInit {
 	/**
 	 * The application name
 	 */
@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	/**
 	 * The currently selected language
 	*/
-	currentLang: Lang;
+	currentLang: Lang | undefined;
 
 	/**
 	 * Information about the connected user
@@ -45,22 +45,15 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private i18nService: I18nService,
+		private readonly authService: AuthService,
 	) { }
 
 	ngOnInit(): void {
 		this.mainNavigation = navbarNavigation;
-		this.connectedUserInfo = {
-			username: 'dieperid',
-			name: 'David',
-			email: 'test@gmail.com',
-		};
+		this.connectedUserInfo = this.authService.getUserInfo();
 		const languages = this.i18nService.getAvailableLangs();
 		this.setDropdownLangValue(languages);
 		this.currentLang = this.i18nService.getActiveLang();
-	}
-
-	ngOnDestroy(): void {
-		throw new Error('Method not implemented.');
 	}
 
 	/**

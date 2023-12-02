@@ -17,9 +17,11 @@ export class AccountService {
 	 */
 	getAccountData(): any {
 		const userInfo: UserInfo = {
-			username: 'dieperid',
+			sub: 'dieperid',
 			name: 'David',
-			email: 'test@gmail.com'
+			email: 'test@gmail.com',
+			picture: '',
+			lang: 'fr'
 		};
 
 		return userInfo;
