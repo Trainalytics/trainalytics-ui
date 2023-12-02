@@ -21,12 +21,12 @@
 	<ng-template pTemplate="end">
 		<div class="nav-addon">
 			<p-button
+				severity="secondary"
 				styleClass="me-3"
-				size="large"
 				(onClick)="logout()"
-				icon="pi pi-sign-out"
+				icon="pi pi-power-off"
 				[rounded]="true"
-				[text]="true"
+				[outlined]="true"
 			></p-button>
 			<div class="me-3">
 				<p-dropdown
