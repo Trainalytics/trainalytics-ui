@@ -6,11 +6,6 @@
 	class="app-main"
 	role="main"
 >
-	<div *ngIf="isLoggedIn()">
-		<div class="container">
-			<button (click)="logout()">Logout from Google</button>
-		</div>
-	</div>
 	<router-outlet></router-outlet>
 </main>
 

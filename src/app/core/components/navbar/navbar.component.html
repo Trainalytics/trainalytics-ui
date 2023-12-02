@@ -1,7 +1,6 @@
 <p-menubar
 	[model]="mainNavigation"
-	styleClass="p-0"
-	class="navbar-menu"
+	styleClass="p-0 navbar-menu"
 >
 	<ng-template pTemplate="start">
 		<div class="nav-logo">
@@ -21,6 +20,14 @@
 	</ng-template>
 	<ng-template pTemplate="end">
 		<div class="nav-addon">
+			<p-button
+				styleClass="me-3"
+				size="large"
+				(onClick)="logout()"
+				icon="pi pi-sign-out"
+				[rounded]="true"
+				[text]="true"
+			></p-button>
 			<div class="me-3">
 				<p-dropdown
 					[options]="availableLangs"

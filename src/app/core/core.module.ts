@@ -12,6 +12,7 @@ import { OAuthModuleConfig } from "angular-oauth2-oidc";
 import { appInitializerFactory } from "@config/initializers/app.initializer";
 import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
 	declarations: [NavbarComponent],
@@ -23,7 +24,8 @@ import { TabMenuModule } from 'primeng/tabmenu';
 		DropdownModule,
 		FormsModule,
 		MenubarModule,
-		TabMenuModule
+		TabMenuModule,
+		ButtonModule
 	],
 	exports: [NavbarComponent],
 	providers: [

@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { I18nService } from '@core/services/i18n.service';
 import { Lang } from '@models/lang.model';
-import { NavLink } from '@models/nav-link.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
 import { UserInfo } from '@models/user-info.model';
 import { MenuItem } from 'primeng/api';
@@ -13,7 +12,15 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 const navbarNavigation: Array<MenuItem> = [
 	{
 		label: 'Home',
-		icon: 'pi pi-fw pi-home'
+		icon: 'pi pi-fw pi-home',
+		routerLink: '/',
+		items: [
+			{
+				label: 'Home',
+				icon: 'pi pi-fw pi-home',
+				routerLink: '/',
+			}
+		]
 	},
 	{
 		label: 'Home',
@@ -101,6 +108,7 @@ export class NavbarComponent implements OnInit {
 	 * Logout of the application
 	 */
 	logout(): void {
-		this.authService.logout();
+		console.log("Logout");
+		// this.authService.logout();
 	}
 }
