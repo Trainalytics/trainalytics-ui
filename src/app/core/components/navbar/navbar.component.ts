@@ -4,12 +4,34 @@ import { Lang } from '@models/lang.model';
 import { NavLink } from '@models/nav-link.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
 import { UserInfo } from '@models/user-info.model';
+import { MenuItem } from 'primeng/api';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 /**
  * Array that contains each tab of the navbar
  */
-const navbarNavigation: Array<NavLink> = [];
+const navbarNavigation: Array<MenuItem> = [
+	{
+		label: 'Home',
+		icon: 'pi pi-fw pi-home'
+	},
+	{
+		label: 'Home',
+		icon: 'pi pi-fw pi-home'
+	},
+	{
+		label: 'Home',
+		icon: 'pi pi-fw pi-home'
+	},
+	{
+		label: 'Home',
+		icon: 'pi pi-fw pi-home'
+	},
+	{
+		label: 'Quit',
+		icon: 'pi pi-fw pi-power-off',
+	}
+];
 
 @Component({
 	selector: 'trainalytics-navbar',
@@ -26,7 +48,7 @@ export class NavbarComponent implements OnInit {
 	/**
 	 * The main navigation items in the header
 	 */
-	mainNavigation: Array<NavLink> = [];
+	mainNavigation: Array<MenuItem> = [];
 
 	/**
 	 * The languages available in the lang selector
@@ -73,5 +95,12 @@ export class NavbarComponent implements OnInit {
 		const lang = evt.value;
 		this.currentLang = lang;
 		this.i18nService.setActiveLang(lang);
+	}
+
+	/**
+	 * Logout of the application
+	 */
+	logout(): void {
+		this.authService.logout();
 	}
 }

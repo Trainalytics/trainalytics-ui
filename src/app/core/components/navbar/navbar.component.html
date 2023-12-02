@@ -1,32 +1,38 @@
-<nav class="navbar">
-	<div class="nav-logo">
-		<a
-			title="home"
-			routerLink="/"
-			class="logo"
-		>
-			<img
-				src="/assets/svg/trainalytics-logo.svg"
-				alt="Trainalytics logo"
-				height="40px"
-			/>
-			<p class="app-name">{{ appName }}</p>
-		</a>
-	</div>
-
-	<div class="nav-addon">
-		<div class="me-3">
-			<!-- <p-dropdown
-				[options]="availableLangs"
-				(onChange)="changeLocale($event)"
-				[(ngModel)]="currentLang"
-				optionLabel="label"
-				optionValue="value"
-				data-tui="language-selector"
-			></p-dropdown> -->
+<p-menubar
+	[model]="mainNavigation"
+	styleClass="p-0"
+	class="navbar-menu"
+>
+	<ng-template pTemplate="start">
+		<div class="nav-logo">
+			<a
+				title="home"
+				routerLink="/"
+				class="logo"
+			>
+				<img
+					src="/assets/svg/trainalytics-logo.svg"
+					alt="Trainalytics logo"
+					height="40px"
+				/>
+				<p class="app-name">{{ appName }}</p>
+			</a>
 		</div>
-		<span class="user-name">
-			{{ connectedUserInfo?.name }}
-		</span>
-	</div>
-</nav>
+	</ng-template>
+	<ng-template pTemplate="end">
+		<div class="nav-addon">
+			<div class="me-3">
+				<p-dropdown
+					[options]="availableLangs"
+					(onChange)="changeLocale($event)"
+					[(ngModel)]="currentLang"
+					optionLabel="label"
+					optionValue="value"
+				></p-dropdown>
+			</div>
+			<span class="user-name">
+				{{ connectedUserInfo?.name }}
+			</span>
+		</div>
+	</ng-template>
+</p-menubar>
