@@ -20,26 +20,36 @@
 	</ng-template>
 	<ng-template pTemplate="end">
 		<div class="nav-addon">
-			<p-button
+			<!-- <p-button
 				severity="secondary"
 				styleClass="me-3"
 				(onClick)="logout()"
 				icon="pi pi-power-off"
 				[rounded]="true"
 				[outlined]="true"
+			></p-button> -->
+			<p-dropdown
+				styleClass="me-3"
+				[options]="availableLangs"
+				(onChange)="changeLocale($event)"
+				[(ngModel)]="currentLang"
+				optionLabel="label"
+				optionValue="value"
+			></p-dropdown>
+			<p-toast></p-toast>
+			<p-menu
+				#menu
+				[model]="accountNavigation"
+				[popup]="true"
+			></p-menu>
+			<p-button
+				styleClass="me-3"
+				(onClick)="menu.toggle($event)"
+				icon="pi pi-bars"
+				[label]="connectedUserInfo?.name"
+				[outlined]="true"
+				severity="secondary"
 			></p-button>
-			<div class="me-3">
-				<p-dropdown
-					[options]="availableLangs"
-					(onChange)="changeLocale($event)"
-					[(ngModel)]="currentLang"
-					optionLabel="label"
-					optionValue="value"
-				></p-dropdown>
-			</div>
-			<span class="user-name">
-				{{ connectedUserInfo?.name }}
-			</span>
 		</div>
 	</ng-template>
 </p-menubar>

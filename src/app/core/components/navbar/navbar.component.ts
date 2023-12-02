@@ -1,5 +1,6 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { I18nService } from '@core/services/i18n.service';
+import { loginFragment } from '@login/config/route.builder';
 import { Lang } from '@models/lang.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
 import { UserInfo } from '@models/user-info.model';
@@ -13,12 +14,11 @@ const navbarNavigation: Array<MenuItem> = [
 	{
 		label: 'Home',
 		icon: 'pi pi-fw pi-home',
-		routerLink: '/',
 		items: [
 			{
-				label: 'Home',
+				label: 'Login',
 				icon: 'pi pi-fw pi-home',
-				routerLink: '/',
+				routerLink: loginFragment,
 			}
 		]
 	},
@@ -40,6 +40,22 @@ const navbarNavigation: Array<MenuItem> = [
 	}
 ];
 
+/**
+ * Array that contains each tab of an account
+ */
+const accountNavigation: Array<MenuItem> = [
+	{
+		label: 'Settings',
+		icon: 'pi pi-fw pi-home',
+		routerLink: '/',
+	},
+	{
+		label: 'Logout',
+		icon: 'pi pi-fw pi-home',
+		routerLink: loginFragment,
+	},
+];
+
 @Component({
 	selector: 'trainalytics-navbar',
 	templateUrl: './navbar.component.html',
@@ -56,6 +72,11 @@ export class NavbarComponent implements OnInit {
 	 * The main navigation items in the header
 	 */
 	mainNavigation: Array<MenuItem> = [];
+
+	/**
+	 * Account items
+	 */
+	accountNavigation: Array<MenuItem> = [];
 
 	/**
 	 * The languages available in the lang selector
@@ -79,8 +100,20 @@ export class NavbarComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.mainNavigation = navbarNavigation;
-		this.connectedUserInfo = this.authService.getUserInfo();
 		const languages = this.i18nService.getAvailableLangs();
+		this.accountNavigation = [
+			{
+				label: this.i18nService.translate('actions.continue'),
+				icon: 'pi pi-fw pi-home',
+				routerLink: '/',
+			},
+			{
+				label: 'Logout',
+				icon: 'pi pi-fw pi-home',
+				routerLink: loginFragment,
+			},
+		];
+		this.connectedUserInfo = this.authService.getUserInfo();
 		this.setDropdownLangValue(languages);
 		this.currentLang = this.i18nService.getActiveLang();
 	}

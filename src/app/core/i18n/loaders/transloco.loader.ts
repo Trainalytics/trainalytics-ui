@@ -1,25 +1,29 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { Translation, TranslocoLoader } from '@ngneat/transloco';
 import { Lang } from '@models/lang.model';
 import { isLangAvailable } from '../i18n.helper';
 import { GetLangParams } from '@ngneat/transloco-persist-lang';
+import { HttpClient } from '@angular/common/http';
 
 /**
  * This loader is the extension for the native transloco service
  * @see https://ngneat.github.io/transloco/docs/hack#the-loader
  */
-@Injectable({ providedIn: 'root' })
+@Injectable({
+	providedIn: 'root'
+})
 export class TranslocoCustomLoader implements TranslocoLoader {
+
+	private http = inject(HttpClient);
+
 	/**
 	 * Fetch the translations file for a given locale
 	 * @param lang - the locale of the language
 	 * @returns the translation file observable
 	 */
-	getTranslation(lang: Lang): Observable<Translation> {
-		/* Using the JS imports + enabling cache-busting makes webpack create un bundle with a different hash every time the i18n file changes
-		and then avoids browser's cache refresh issues*/
-		return from(import(`../../../../assets/i18n/${lang}.json`));
+	getTranslation(lang: Lang) {
+		return this.http.get<Translation>(`../../../../assets/i18n/${lang}.json`);
 	}
 }
 

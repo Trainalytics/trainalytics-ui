@@ -10,7 +10,6 @@
 	&-addon {
 		display: flex;
 		align-items: center;
-		padding-left: 1em;
 	}
 
 	&-logo {
@@ -33,13 +32,4 @@
 	font-weight: 500;
 	text-transform: uppercase;
 	font-style: italic;
-}
-
-.user-name {
-	font-size: 1.1rem;
-	max-width: 10em;
-	padding: 0 0.5em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 }

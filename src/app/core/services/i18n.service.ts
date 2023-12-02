@@ -3,6 +3,7 @@ import { Lang } from '@models/lang.model';
 import { TranslationWithParam } from '@models/translation-with-param.model';
 import { TranslocoService } from '@ngneat/transloco';
 import { combineLatest, filter, pluck, tap } from 'rxjs';
+import { PrimeNGConfig } from 'primeng/api';
 
 /**
  * The key of the primeng translation in the i18n json file
@@ -22,7 +23,7 @@ export class I18nService {
 	areTranslationsReady = false;
 
 	constructor(
-		// private primeConfig: PrimeNGConfig,
+		private primeConfig: PrimeNGConfig,
 		public translocoService: TranslocoService,
 	) {
 		const onLangChange$ = this.translocoService.langChanges$.pipe(
@@ -81,7 +82,7 @@ export class I18nService {
 	updatePrimeComponentLocale(): void {
 		const translations = this.translocoService.translateObject(primengTranslationKey);
 		if (typeof translations === 'object') {
-			// this.primeConfig.setTranslation(translations);
+			this.primeConfig.setTranslation(translations);
 		}
 	}
 

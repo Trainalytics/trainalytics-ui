@@ -11,8 +11,7 @@ import { AppConfigService } from "./services/app-config.service";
 import { OAuthModuleConfig } from "angular-oauth2-oidc";
 import { appInitializerFactory } from "@config/initializers/app.initializer";
 import { MenubarModule } from 'primeng/menubar';
-import { TabMenuModule } from 'primeng/tabmenu';
-import { ButtonModule } from 'primeng/button';
+import { SharedModule } from "@shared/shared.module";
 
 @NgModule({
 	declarations: [NavbarComponent],
@@ -24,8 +23,7 @@ import { ButtonModule } from 'primeng/button';
 		DropdownModule,
 		FormsModule,
 		MenubarModule,
-		TabMenuModule,
-		ButtonModule
+		SharedModule,
 	],
 	exports: [NavbarComponent],
 	providers: [

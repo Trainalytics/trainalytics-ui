@@ -25,7 +25,7 @@ export class AppConfigService {
 	 * @returns the environment configuration
 	 */
 	loadAppConfig(): Observable<EnvInfo> {
-		return this.httpClient.get<EnvInfo>(`/assets/config/env.json`)
+		return this.httpClient.get<EnvInfo>(`config/env.json`)
 			.pipe(
 				tap((config: EnvInfo) => this.appConfig = config)
 			)

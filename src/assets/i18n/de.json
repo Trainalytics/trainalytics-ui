@@ -5,7 +5,8 @@
 	"general_informations": {
 		"username": "Benutzername",
 		"password": "Passwort",
-		"email": "Email"
+		"email": "Email",
+		"settingsText": "Einstellungen"
 	},
 	"errors": {
 		"field_is_required": "Dieses Feld ist erforderlich."
