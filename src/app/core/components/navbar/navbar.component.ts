@@ -40,21 +40,6 @@ const navbarNavigation: Array<MenuItem> = [
 	}
 ];
 
-/**
- * Array that contains each tab of an account
- */
-const accountNavigation: Array<MenuItem> = [
-	{
-		label: 'Settings',
-		icon: 'pi pi-fw pi-home',
-		routerLink: '/',
-	},
-	{
-		label: 'Logout',
-		icon: 'pi pi-fw pi-home',
-	},
-];
-
 @Component({
 	selector: 'trainalytics-navbar',
 	templateUrl: './navbar.component.html',
