@@ -52,7 +52,6 @@ const accountNavigation: Array<MenuItem> = [
 	{
 		label: 'Logout',
 		icon: 'pi pi-fw pi-home',
-		routerLink: loginFragment,
 	},
 ];
 
@@ -110,8 +109,8 @@ export class NavbarComponent implements OnInit {
 			},
 			{
 				label: 'Logout',
-				icon: 'pi pi-fw pi-home',
-				routerLink: loginFragment,
+				icon: 'pi pi-sign-out',
+				command: () => this.logout(),
 			},
 		];
 		this.connectedUserInfo = this.authService.getUserInfo();
@@ -143,6 +142,6 @@ export class NavbarComponent implements OnInit {
 	 */
 	logout(): void {
 		console.log("Logout");
-		// this.authService.logout();
+		this.authService.logout();
 	}
 }
