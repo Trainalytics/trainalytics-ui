@@ -4,6 +4,7 @@ import { loginFragment } from '@login/config/route.builder';
 import { Lang } from '@models/lang.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
 import { UserInfo } from '@models/user-info.model';
+import { TranslocoService } from '@ngneat/transloco';
 import { MenuItem } from 'primeng/api';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
@@ -80,15 +81,23 @@ export class NavbarComponent implements OnInit {
 	constructor(
 		private i18nService: I18nService,
 		private readonly authService: AuthService,
+		private readonly trans: TranslocoService,
 	) { }
 
 	ngOnInit(): void {
 		this.mainNavigation = navbarNavigation;
 		const languages = this.i18nService.getAvailableLangs();
+		this.connectedUserInfo = this.authService.getUserInfo();
+		this.setDropdownLangValue(languages);
+		this.currentLang = this.i18nService.getActiveLang();
+		this.initAccountNavigation();
+	}
+
+	initAccountNavigation(): void {
 		this.accountNavigation = [
 			{
-				// label: this.i18nService.translate('actions.continue'),
 				label: 'Settings',
+				// label: 'Settings',
 				icon: 'pi pi-cog',
 				routerLink: '/',
 			},
@@ -98,9 +107,9 @@ export class NavbarComponent implements OnInit {
 				command: () => this.logout(),
 			},
 		];
-		this.connectedUserInfo = this.authService.getUserInfo();
-		this.setDropdownLangValue(languages);
-		this.currentLang = this.i18nService.getActiveLang();
+		this.trans.selectTranslate('actions.continue').subscribe(trans => {
+			this.accountNavigation[0].label = trans
+		});
 	}
 
 	/**

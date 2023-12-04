@@ -2,15 +2,16 @@ import { inject, Injectable } from '@angular/core';
 import { Translation, TranslocoLoader } from '@ngneat/transloco';
 import { Lang } from '@models/lang.model';
 import { HttpClient } from '@angular/common/http';
+import { isLangAvailable } from '../i18n.helper';
+import { IdToken } from '@models/id-token.model';
+import { GetLangParams } from '@ngneat/transloco-persist-lang';
+import { SESSION_STORAGE_IDTOKEN } from '@auth/constants/auth.constant';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class TranslocoCustomLoader implements TranslocoLoader {
-	/**
-	 * Httpclient used to request the i18n config file
-	 */
-	private http = inject(HttpClient);
+	constructor(private http: HttpClient) { }
 
 	/**
 	 * Fetch the translations file for a given lang

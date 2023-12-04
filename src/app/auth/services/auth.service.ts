@@ -5,11 +5,12 @@ import { UserInfo } from '@models/user-info.model';
 import { Subject, Subscription } from 'rxjs';
 import { IdToken } from '@models/id-token.model';
 import { EnvInfo } from '@models/env-info.model';
+import { SESSION_STORAGE_IDTOKEN } from '@auth/constants/auth.constant';
 
 /**
  * This is the key of the storage item where the decoded idToken is saved
  */
-const decodedIdTokenKey = 'id_token_claims_obj';
+const decodedIdTokenKey = SESSION_STORAGE_IDTOKEN;
 
 @Injectable({
 	providedIn: 'root'
