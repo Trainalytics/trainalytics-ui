@@ -34,6 +34,9 @@
 		"modify": "Bearbeiten",
 		"submit": "Senden Sie"
 	},
+	"dashboard": {
+		"add_activity": "Aktivität hinzufügen"
+	},
 	"primeng": {
 		"startsWith": "Beginnt mit",
 		"contains": "Enthält",

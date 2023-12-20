@@ -34,6 +34,9 @@
 		"modify": "Modifier",
 		"submit": "Soumettre"
 	},
+	"dashboard": {
+		"add_activity": "Ajouter une activité"
+	},
 	"primeng": {
 		"startsWith": "Commence par",
 		"contains": "Contient",

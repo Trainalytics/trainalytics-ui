@@ -1,1 +1,27 @@
-<p>dashboard-table works!</p>
+<p-table
+	[value]="activites"
+	[tableStyle]="{ 'min-width': '50rem' }"
+	styleClass="p-datatable-gridlines"
+>
+	<ng-template pTemplate="header">
+		<tr>
+			<th>Lundi</th>
+			<th>Mardi</th>
+			<th>Mercredi</th>
+			<th>Jeudi</th>
+			<th>Vendredi</th>
+		</tr>
+	</ng-template>
+	<ng-template
+		pTemplate="body"
+		let-activity
+	>
+		<tr>
+			<td>{{ activity.code }}</td>
+			<td>{{ activity.name }}</td>
+			<td>{{ activity.category }}</td>
+			<td>{{ activity.quantity }}</td>
+			<td>{{ activity.quantity }}</td>
+		</tr>
+	</ng-template>
+</p-table>

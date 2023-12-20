@@ -9,6 +9,7 @@ import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
 import { MessageService } from 'primeng/api';
 import { PanelModule } from 'primeng/panel';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
 	declarations: [],
@@ -21,7 +22,8 @@ import { PanelModule } from 'primeng/panel';
 		ButtonModule,
 		ToastModule,
 		MessagesModule,
-		PanelModule
+		PanelModule,
+		TableModule
 	],
 	exports: [
 		TranslocoModule,
@@ -32,7 +34,8 @@ import { PanelModule } from 'primeng/panel';
 		ButtonModule,
 		ToastModule,
 		MessagesModule,
-		PanelModule
+		PanelModule,
+		TableModule
 	],
 	providers: [
 		MessageService,
