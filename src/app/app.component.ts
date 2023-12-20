@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { I18nService } from '@core/services/i18n.service';
-import { AuthService } from './auth/services/auth.service';
 import { UserInfo } from '@models/user-info.model';
 
 @Component({
@@ -24,21 +22,10 @@ export class AppComponent implements OnInit {
 	 */
 	userInfo?: UserInfo;
 
-	constructor(
-		private readonly i18nService: I18nService,
-		private readonly authService: AuthService,
-	) { }
+	constructor() { }
 
 	ngOnInit(): void {
 		this.appName = 'Trainalytics';
 		this.currentYear = new Date().getFullYear().toString();
-	}
-
-	isLoggedIn(): boolean {
-		return true;
-	}
-
-	logout(): void {
-		this.authService.logout();
 	}
 }

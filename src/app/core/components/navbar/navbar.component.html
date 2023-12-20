@@ -1,32 +1,45 @@
-<nav class="navbar">
-	<div class="nav-logo">
-		<a
-			title="home"
-			routerLink="/"
-			class="logo"
-		>
-			<img
-				src="/assets/svg/trainalytics-logo.svg"
-				alt="Trainalytics logo"
-				height="40px"
-			/>
-			<p class="app-name">{{ appName }}</p>
-		</a>
-	</div>
-
-	<div class="nav-addon">
-		<div class="me-3">
-			<!-- <p-dropdown
+<p-menubar
+	[model]="mainNavigation"
+	styleClass="p-0"
+>
+	<ng-template pTemplate="start">
+		<div class="nav-logo">
+			<a
+				title="home"
+				routerLink="/"
+				class="logo"
+			>
+				<img
+					class="logo-img"
+					src="/assets/svg/trainalytics-logo.svg"
+					alt="Trainalytics logo"
+				/>
+				<p class="app-name">{{ appName }}</p>
+			</a>
+		</div>
+	</ng-template>
+	<ng-template pTemplate="end">
+		<div class="nav-addon">
+			<p-dropdown
+				styleClass="me-3"
 				[options]="availableLangs"
 				(onChange)="changeLocale($event)"
 				[(ngModel)]="currentLang"
 				optionLabel="label"
 				optionValue="value"
-				data-tui="language-selector"
-			></p-dropdown> -->
+			></p-dropdown>
+			<p-menu
+				#menu
+				[model]="accountNavigation"
+				[popup]="true"
+			></p-menu>
+			<p-button
+				styleClass="me-3"
+				(onClick)="menu.toggle($event)"
+				icon="pi pi-bars"
+				[label]="connectedUserInfo?.name"
+				[outlined]="true"
+			></p-button>
 		</div>
-		<span class="user-name">
-			{{ connectedUserInfo?.name }}
-		</span>
-	</div>
-</nav>
+	</ng-template>
+</p-menubar>

@@ -10,6 +10,8 @@ import { AuthService } from "@auth/services/auth.service";
 import { AppConfigService } from "./services/app-config.service";
 import { OAuthModuleConfig } from "angular-oauth2-oidc";
 import { appInitializerFactory } from "@config/initializers/app.initializer";
+import { MenubarModule } from 'primeng/menubar';
+import { SharedModule } from "@shared/shared.module";
 
 @NgModule({
 	declarations: [NavbarComponent],
@@ -20,6 +22,8 @@ import { appInitializerFactory } from "@config/initializers/app.initializer";
 		AuthModule,
 		DropdownModule,
 		FormsModule,
+		MenubarModule,
+		SharedModule,
 	],
 	exports: [NavbarComponent],
 	providers: [

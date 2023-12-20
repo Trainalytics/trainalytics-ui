@@ -1,0 +1,10 @@
+.p-menubar.navbar-menu {
+	border: 0;
+	border-radius: 0;
+	box-shadow: var(--shadow);
+
+	.p-menuitem-icon,
+	.p-menuitem-text {
+		font-size: 1.1rem;
+	}
+}

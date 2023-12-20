@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { AuthService } from '@auth/services/auth.service';
 import { AppConfigService } from '@core/services/app-config.service';
+import { TranslocoService } from '@ngneat/transloco';
 
 /**
  * Function that initialize the app

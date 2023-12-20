@@ -1,41 +1,7 @@
 .nav {
-	display: flex;
-	flex-direction: column;
-	margin: 0;
-	margin-right: auto;
-	padding-left: 0;
-	overflow: hidden;
-	list-style: none;
-
-	// &__icon {
-	// 	margin-right: 0.5em;
-	// }
-
-	// &__link {
-	// 	display: flex;
-	// 	align-items: center;
-	// 	height: 100%;
-	// 	padding: 1em;
-	// 	border-right: 1px solid var(--color-bg-header);
-	// 	color: var(--color-text-body);
-	// 	text-decoration: none;
-
-	// 	&:hover,
-	// 	&:focus {
-	// 		background-color: var(--primary-color);
-	// 		color: var(--primary-color-text);
-	// 	}
-
-	// 	&--active {
-	// 		background-color: var(--primary-color);
-	// 		color: var(--primary-color-text);
-	// 	}
-	// }
-
 	&-addon {
 		display: flex;
 		align-items: center;
-		padding-left: 1em;
 	}
 
 	&-logo {
@@ -45,20 +11,15 @@
 	}
 }
 
-.navbar {
-	display: flex;
-	position: relative;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	background-color: var(--color-bg-header-default);
-	box-shadow: var(--shadow);
-}
-
 .logo {
 	display: flex;
 	align-items: center;
 	text-decoration: none;
 	color: var(--color-text-body);
+
+	&-img {
+		height: 40px;
+	}
 }
 
 .app-name {
@@ -69,10 +30,12 @@
 	font-style: italic;
 }
 
-.user-name {
-	max-width: 10em;
-	padding: 0 1em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+@media screen and (max-width: 600px) {
+	.app-name {
+		font-size: 1.4rem;
+	}
+
+	.logo-img {
+		height: 35px;
+	}
 }
