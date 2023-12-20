@@ -97,7 +97,6 @@ export class NavbarComponent implements OnInit {
 		this.accountNavigation = [
 			{
 				label: 'Settings',
-				// label: 'Settings',
 				icon: 'pi pi-cog',
 				routerLink: '/',
 			},
