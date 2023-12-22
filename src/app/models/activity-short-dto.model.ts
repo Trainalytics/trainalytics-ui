@@ -1,4 +1,4 @@
-export interface ActivityResume {
+export interface ActivityShortDto {
 	/**
 	 * The name of the activity
 	 */
@@ -11,11 +11,15 @@ export interface ActivityResume {
 	/**
 	 * The average heart rate of the activity
 	 */
-	averageHr: string;
+	averageHr: number;
+	/**
+	 * The average pace of the activity
+	 */
+	averagePace: string;
 	/**
 	 * The distance of the activity
 	 */
-	distance: string;
+	distance: number;
 	/**
 	 * The duration of the activity
 	 */
