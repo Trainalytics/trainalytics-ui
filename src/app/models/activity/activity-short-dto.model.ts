@@ -15,7 +15,7 @@ export interface ActivityShortDto {
 	/**
 	 * The average pace of the activity
 	 */
-	averagePace: string;
+	averagePace?: string;
 	/**
 	 * The distance of the activity
 	 */

@@ -18,47 +18,16 @@
 		<tr>
 			<td>
 				<p-card
-					header="Gimel Running"
-					subheader="Card Subheader"
+					header="{{ activity.name }}"
 					styleClass="activity-card"
 				>
-					<!-- <ng-template pTemplate="header">
-						<img
-							alt="Card"
-							src="https://static.actu.fr/uploads/2020/06/2-trail-du-tue-vaques30-kmvincent-palut-974-loic-chausse-937-anthony-beaumer-960.jpg"
-						/>
-					</ng-template> -->
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-						consequuntur error repudiandae numquam deserunt quisquam repellat libero
-						asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate
-						neque quas!
-					</p>
-					<ng-template pTemplate="footer">
-						<p-button
-							severity="secondary"
-							label="Edit"
-							icon="pi pi-pencil"
-						></p-button>
-					</ng-template>
-				</p-card>
-				<p-card
-					header="Gimel Running"
-					subheader="Card Subheader"
-					styleClass="activity-card"
-				>
-					<!-- <ng-template pTemplate="header">
-						<img
-							alt="Card"
-							src="https://static.actu.fr/uploads/2020/06/2-trail-du-tue-vaques30-kmvincent-palut-974-loic-chausse-937-anthony-beaumer-960.jpg"
-						/>
-					</ng-template> -->
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-						consequuntur error repudiandae numquam deserunt quisquam repellat libero
-						asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate
-						neque quas!
-					</p>
+					<p>Type : {{ activity.type }}</p>
+					@if(activity.averagePace) {
+					<p>Pace : {{ activity.averagePace }}/km</p>
+					}
+					<p>Distance : {{ activity.distance }} km</p>
+					<p>Average HR : {{ activity.averageHr }} bpm</p>
+					<p>Duration : {{ activity.duration }}</p>
 					<ng-template pTemplate="footer">
 						<p-button
 							severity="secondary"
@@ -68,10 +37,30 @@
 					</ng-template>
 				</p-card>
 			</td>
-			<td>{{ activity.name }}</td>
-			<td>{{ activity.category }}</td>
-			<td>{{ activity.quantity }}</td>
-			<td>{{ activity.quantity }}</td>
+			<td>
+				<p-card
+					header="{{ activity.name }}"
+					styleClass="activity-card"
+				>
+					<p>Type : {{ activity.type }}</p>
+					@if(activity.averagePace) {
+					<p>Pace : {{ activity.averagePace }}/km</p>
+					}
+					<p>Distance : {{ activity.distance }} km</p>
+					<p>Average HR : {{ activity.averageHr }} bpm</p>
+					<p>Duration : {{ activity.duration }}</p>
+					<ng-template pTemplate="footer">
+						<p-button
+							severity="secondary"
+							label="Edit"
+							icon="pi pi-pencil"
+						></p-button>
+					</ng-template>
+				</p-card>
+			</td>
+			<td>.</td>
+			<td>.</td>
+			<td>.</td>
 		</tr>
 	</ng-template>
 </p-table>

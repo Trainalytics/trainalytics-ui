@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { I18nService } from '@core/services/i18n.service';
+import { ActivityShortDto } from '@models/activity/activity-short-dto.model';
 
 @Component({
 	selector: 'trainalytics-dashboard-table',
@@ -8,7 +9,7 @@ import { I18nService } from '@core/services/i18n.service';
 })
 export class DashboardTableComponent implements OnInit {
 
-	activites: Array<any> = [];
+	activites: Array<ActivityShortDto> = [];
 
 	constructor(
 		private readonly _i18n: I18nService,
@@ -18,21 +19,23 @@ export class DashboardTableComponent implements OnInit {
 		this.initActivites();
 	}
 
-
 	initActivites(): void {
 		this.activites = [
 			{
-				id: '1000',
-				code: 'f230fh0g3',
-				name: 'Bamboo Watch',
-				description: 'Product Description',
-				image: 'bamboo-watch.jpg',
-				price: 65,
-				category: 'Accessories',
-				quantity: 24,
-				inventoryStatus: 'INSTOCK',
-				rating: 5
+				name: 'VMA-S5-2-Endurance Fontamentale',
+				type: 'running',
+				averageHr: 135,
+				averagePace: '5:30',
+				distance: 10.5,
+				duration: '1:10:35'
 			},
+			{
+				name: 'FTP-S3-3-Endurance Fontamentale',
+				type: 'cycling',
+				averageHr: 115,
+				distance: 40,
+				duration: '1:10:35'
+			}
 		];
 	}
 }
