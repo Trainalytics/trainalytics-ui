@@ -35,7 +35,34 @@
 		"submit": "Soumettre"
 	},
 	"dashboard": {
-		"add_activity": "Ajouter une activité"
+		"add_activity": "Ajouter une activité",
+		"dayNames": {
+			"monday": "Lundi",
+			"tuesday": "Mardi",
+			"wednesday": "Mercredi",
+			"thursday": "Jeudi",
+			"friday": "Vendredi",
+			"saturday": "Samedi",
+			"sunday": "Dimanche"
+		},
+		"dayNamesShort": {
+			"monday": "Lun",
+			"tuesday": "Mar",
+			"wednesday": "Mer",
+			"thursday": "Jeu",
+			"friday": "Ven",
+			"saturday": "Sam",
+			"sunday": "Dim"
+		},
+		"dayNamesMin": {
+			"monday": "Lu",
+			"tuesday": "Ma",
+			"wednesday": "Me",
+			"thursday": "Je",
+			"friday": "Ve",
+			"saturday": "Sa",
+			"sunday": "Di"
+		}
 	},
 	"primeng": {
 		"startsWith": "Commence par",

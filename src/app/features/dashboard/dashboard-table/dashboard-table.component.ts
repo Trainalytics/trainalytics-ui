@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { I18nService } from '@core/services/i18n.service';
 import { ActivityShortDto } from '@models/activity/activity-short-dto.model';
 
 @Component({
@@ -10,10 +9,6 @@ import { ActivityShortDto } from '@models/activity/activity-short-dto.model';
 export class DashboardTableComponent implements OnInit {
 
 	activites: Array<ActivityShortDto> = [];
-
-	constructor(
-		private readonly _i18n: I18nService,
-	) { }
 
 	ngOnInit(): void {
 		this.initActivites();

@@ -4,11 +4,13 @@
 >
 	<ng-template pTemplate="header">
 		<tr>
-			<th style="width: 20%">Lundi</th>
-			<th style="width: 20%">Mardi</th>
-			<th style="width: 20%">Mercredi</th>
-			<th style="width: 20%">Jeudi</th>
-			<th style="width: 20%">Vendredi</th>
+			<th>{{ "dashboard.dayNames.monday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.tuesday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.wednesday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.thursday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.friday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.saturday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.sunday" | transloco }}</th>
 		</tr>
 	</ng-template>
 	<ng-template
@@ -17,10 +19,11 @@
 	>
 		<tr>
 			<td>
-				<p-card
-					header="{{ activity.name }}"
-					styleClass="activity-card"
-				>
+				<p-card styleClass="activity-card">
+					<ng-template pTemplate="title">
+						{{ activity.name }}
+						<p-divider></p-divider>
+					</ng-template>
 					<p>Type : {{ activity.type }}</p>
 					@if(activity.averagePace) {
 					<p>Pace : {{ activity.averagePace }}/km</p>
@@ -38,10 +41,11 @@
 				</p-card>
 			</td>
 			<td>
-				<p-card
-					header="{{ activity.name }}"
-					styleClass="activity-card"
-				>
+				<p-card styleClass="activity-card">
+					<ng-template pTemplate="title">
+						{{ activity.name }}
+						<p-divider></p-divider>
+					</ng-template>
 					<p>Type : {{ activity.type }}</p>
 					@if(activity.averagePace) {
 					<p>Pace : {{ activity.averagePace }}/km</p>
@@ -58,6 +62,8 @@
 					</ng-template>
 				</p-card>
 			</td>
+			<td>.</td>
+			<td>.</td>
 			<td>.</td>
 			<td>.</td>
 			<td>.</td>

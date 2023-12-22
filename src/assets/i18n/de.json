@@ -35,7 +35,34 @@
 		"submit": "Senden Sie"
 	},
 	"dashboard": {
-		"add_activity": "Aktivität hinzufügen"
+		"add_activity": "Aktivität hinzufügen",
+		"dayNames": {
+			"monday": "Montag",
+			"tuesday": "Dienstag",
+			"wednesday": "Mittwoch",
+			"thursday": "Donnerstag",
+			"friday": "Freitag",
+			"saturday": "Samstag",
+			"sunday": "Sonntag"
+		},
+		"dayNamesShort": {
+			"monday": "Mon",
+			"tuesday": "Die",
+			"wednesday": "Mit",
+			"thursday": "Don",
+			"friday": "Fre",
+			"saturday": "Sam",
+			"sunday": "Son"
+		},
+		"dayNamesMin": {
+			"monday": "Mo",
+			"tuesday": "Di",
+			"wednesday": "Mi",
+			"thursday": "Do",
+			"friday": "Fr",
+			"saturday": "Sa",
+			"sunday": "So"
+		}
 	},
 	"primeng": {
 		"startsWith": "Beginnt mit",
