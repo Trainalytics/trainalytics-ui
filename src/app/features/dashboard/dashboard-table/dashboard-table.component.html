@@ -1,0 +1,44 @@
+<p-table
+	[value]="activites"
+	styleClass="p-datatable-gridlines"
+>
+	<ng-template pTemplate="header">
+		<tr>
+			<th>{{ "dashboard.dayNames.monday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.tuesday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.wednesday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.thursday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.friday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.saturday" | transloco }}</th>
+			<th>{{ "dashboard.dayNames.sunday" | transloco }}</th>
+		</tr>
+	</ng-template>
+	<ng-template
+		pTemplate="body"
+		let-activity
+	>
+		<tr>
+			<td>
+				<trainalytics-activity-card [activity]="activity"> </trainalytics-activity-card>
+			</td>
+			<td>
+				<trainalytics-activity-card [activity]="activity"> </trainalytics-activity-card>
+			</td>
+			<td>
+				<trainalytics-activity-card [activity]="activity"> </trainalytics-activity-card>
+			</td>
+			<td>
+				<trainalytics-activity-card [activity]="activity"> </trainalytics-activity-card>
+			</td>
+			<td>
+				<trainalytics-activity-card [activity]="activity"> </trainalytics-activity-card>
+			</td>
+			<td>
+				<trainalytics-activity-card [activity]="activity"> </trainalytics-activity-card>
+			</td>
+			<td>
+				<trainalytics-activity-card [activity]="activity"> </trainalytics-activity-card>
+			</td>
+		</tr>
+	</ng-template>
+</p-table>

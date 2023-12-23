@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { I18nService } from '@core/services/i18n.service';
-import { loginFragment } from '@login/config/route.builder';
+import { loginFragment } from '@features/login/config/route.builder';
 import { Lang } from '@models/lang.model';
 import { ChangeEvent } from '@models/primeng/dropdown-event.model';
 import { UserInfo } from '@models/user-info.model';

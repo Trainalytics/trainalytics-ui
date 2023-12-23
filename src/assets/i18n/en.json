@@ -34,6 +34,36 @@
 		"modify": "Modify",
 		"submit": "Submit"
 	},
+	"dashboard": {
+		"add_activity": "Add an activity",
+		"dayNames": {
+			"monday": "Monday",
+			"tuesday": "Tuesday",
+			"wednesday": "Wednesday",
+			"thursday": "Thursday",
+			"friday": "Friday",
+			"saturday": "Saturday",
+			"sunday": "Sunday"
+		},
+		"dayNamesShort": {
+			"monday": "Mon",
+			"tuesday": "Tue",
+			"wednesday": "Wed",
+			"thursday": "Thu",
+			"friday": "Fri",
+			"saturday": "Sat",
+			"sunday": "Sun"
+		},
+		"dayNamesMin": {
+			"monday": "Mo",
+			"tuesday": "Tu",
+			"wednesday": "We",
+			"thursday": "Th",
+			"friday": "Fr",
+			"saturday": "Sa",
+			"sunday": "Su"
+		}
+	},
 	"primeng": {
 		"startsWith": "Starts with",
 		"contains": "Contains",

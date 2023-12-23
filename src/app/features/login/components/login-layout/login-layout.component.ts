@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { I18nService } from '@core/services/i18n.service';
-import { AccountService } from '@login/services/account.service';
 import { UserInfo } from '@models/user-info.model';
 
 @Component({
@@ -19,7 +18,6 @@ export class LoginLayoutComponent implements OnInit {
 	constructor(
 		private readonly _i18n: I18nService,
 		private readonly _titleService: Title,
-		private readonly _accountService: AccountService,
 	) {
 		this._titleService.setTitle('Trainalytics | ' + this._i18n.translate('nav.login'));
 	}
@@ -31,8 +29,8 @@ export class LoginLayoutComponent implements OnInit {
 	 * Get the data of a specific account
 	 */
 	getAccountData(): void {
-		this._accountService.getAccountData()
-			.subscribe(res => this.userAccount = res);
+		// this._accountService.getAccountData()
+		// 	.subscribe(res => this.userAccount = res);
 	}
 
 	/**
@@ -40,8 +38,8 @@ export class LoginLayoutComponent implements OnInit {
 	 * @param userInfo - information about the user
 	 */
 	createAccount(userInfo: UserInfo) {
-		this._accountService.createAccount(userInfo)
-			.subscribe(res => this.getAccountData());
+		// this._accountService.createAccount(userInfo)
+		// 	.subscribe(res => this.getAccountData());
 	}
 
 	/**
@@ -49,8 +47,8 @@ export class LoginLayoutComponent implements OnInit {
 	 * @param userInfo - information used to update the user information
 	 */
 	updateAccount(userInfo: UserInfo) {
-		this._accountService.createAccount(userInfo)
-			.subscribe(res => this.getAccountData());
+		// this._accountService.createAccount(userInfo)
+		// 	.subscribe(res => this.getAccountData());
 	}
 
 	/**
@@ -60,7 +58,7 @@ export class LoginLayoutComponent implements OnInit {
 	deleteAccount(userInfo: UserInfo) {
 		// TODO : Send the userInfo DTO and make the request to find which user is it on the back or directly send the id from the front to the api ?
 
-		this._accountService.deleteAccount(userInfo)
-			.subscribe(res => this.getAccountData());
+		// this._accountService.deleteAccount(userInfo)
+		// 	.subscribe(res => this.getAccountData());
 	}
 }
