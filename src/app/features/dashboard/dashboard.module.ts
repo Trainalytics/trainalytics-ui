@@ -5,14 +5,16 @@ import { DashboardLayoutComponent } from './dashboard-layout/dashboard-layout.co
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
 import { DashboardTableComponent } from './dashboard-table/dashboard-table.component';
-import { ActivityCardComponent } from './activity-card/activity-card.component';
+import { ActivityCardComponent } from './activity/activity-card/activity-card.component';
+import { ActivityDetailsComponent } from './activity/activity-details/activity-details.component';
 
 
 @NgModule({
 	declarations: [
 		DashboardLayoutComponent,
 		DashboardTableComponent,
-		ActivityCardComponent
+		ActivityCardComponent,
+		ActivityDetailsComponent,
 	],
 	imports: [
 		CommonModule,
