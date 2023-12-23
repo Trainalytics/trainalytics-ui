@@ -5,10 +5,11 @@ import { DashboardLayoutComponent } from './dashboard-layout/dashboard-layout.co
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
 import { DashboardTableComponent } from './dashboard-table/dashboard-table.component';
+import { ActivitiyCardComponent } from './activitiy-card/activitiy-card.component';
 
 
 @NgModule({
-	declarations: [DashboardLayoutComponent, DashboardTableComponent],
+	declarations: [DashboardLayoutComponent, DashboardTableComponent, ActivitiyCardComponent],
 	imports: [
 		CommonModule,
 		DashboardRoutingModule,
