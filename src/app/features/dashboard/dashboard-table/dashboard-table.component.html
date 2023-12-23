@@ -19,27 +19,7 @@
 	>
 		<tr>
 			<td>
-				<p-card styleClass="activity-card">
-					<ng-template pTemplate="title">
-						<div class="flex-card-title">
-							{{ activity.name }}
-							<p-button
-								severity="secondary"
-								icon="pi pi-pencil"
-								[rounded]="true"
-								[outlined]="true"
-							></p-button>
-						</div>
-						<p-divider></p-divider>
-					</ng-template>
-					<p>Type : {{ activity.type }}</p>
-					@if(activity.averagePace) {
-					<p>Pace : {{ activity.averagePace }}/km</p>
-					}
-					<p>Distance : {{ activity.distance }} km</p>
-					<p>Average HR : {{ activity.averageHr }} bpm</p>
-					<p>Duration : {{ activity.duration }}</p>
-				</p-card>
+				<trainalytics-activity-card [activity]="activity"> </trainalytics-activity-card>
 			</td>
 			<td>
 				<p-card styleClass="activity-card">
