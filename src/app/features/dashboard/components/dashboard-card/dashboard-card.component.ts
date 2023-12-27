@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ActivityShortDto } from '@models/activity/activity-short-dto.model';
+import { activityDetailsRoute } from '../activity/config/route.builder';
 
 @Component({
 	selector: 'trainalytics-dashboard-card',
@@ -11,4 +13,17 @@ export class DashboardCardComponent {
 	@Input()
 	activity: ActivityShortDto;
 
+	constructor(
+		private readonly router: Router
+	) { }
+
+	/**
+	 * Open the activity details page of an activity
+	 * @param activityId - the activity id
+	 */
+	navigateToActivity(activityId: string): void {
+		const url = activityDetailsRoute(true, activityId);
+		console.log(url);
+		this.router.navigateByUrl(url);
+	}
 }
