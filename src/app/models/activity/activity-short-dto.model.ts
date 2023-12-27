@@ -1,5 +1,9 @@
 export interface ActivityShortDto {
 	/**
+	 * Id of the activity
+	 */
+	id: string;
+	/**
 	 * The name of the activity
 	 */
 	name: string;
