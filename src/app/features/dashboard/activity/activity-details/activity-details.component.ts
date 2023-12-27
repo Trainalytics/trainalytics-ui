@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ActivityDto } from '@models/activity/activity-dto.model';
 
 @Component({
-	selector: 'app-activity-details',
+	selector: 'trainalytics-activity-details',
 	templateUrl: './activity-details.component.html',
 	styleUrl: './activity-details.component.scss'
 })

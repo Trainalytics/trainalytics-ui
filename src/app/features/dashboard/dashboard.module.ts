@@ -6,7 +6,6 @@ import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
 import { DashboardTableComponent } from './dashboard-table/dashboard-table.component';
 import { ActivityCardComponent } from './activity/activity-card/activity-card.component';
-import { ActivityDetailsComponent } from './activity/activity-details/activity-details.component';
 
 
 @NgModule({
@@ -14,7 +13,6 @@ import { ActivityDetailsComponent } from './activity/activity-details/activity-d
 		DashboardLayoutComponent,
 		DashboardTableComponent,
 		ActivityCardComponent,
-		ActivityDetailsComponent,
 	],
 	imports: [
 		CommonModule,
