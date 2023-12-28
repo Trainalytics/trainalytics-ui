@@ -1,4 +1,5 @@
 import { addFeatureRoute } from '@config/route.builder';
+import { dashboardFragment } from '@features/dashboard/config/route.builder';
 
 /**
  * The route fragment to the activity component
@@ -27,5 +28,5 @@ export function activityDetailsRoute(withFeatureRoute?: boolean, activityId?: st
 		url = encodeURIComponent(url);
 	}
 
-	return addFeatureRoute(url, withFeatureRoute, activityFragment);
+	return addFeatureRoute(url, withFeatureRoute, dashboardFragment);
 }
