@@ -20,6 +20,10 @@ export class ActivityDetailsComponent implements OnInit {
 		this._initData();
 	}
 
+	/**
+	 * TODO : Make this chart for the heart rate + power data
+	 */
+
 	private _initData(): void {
 		const documentStyle = getComputedStyle(document.documentElement);
 
