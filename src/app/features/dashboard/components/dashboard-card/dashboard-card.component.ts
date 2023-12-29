@@ -23,7 +23,6 @@ export class DashboardCardComponent {
 	 */
 	navigateToActivity(activityId: string): void {
 		const url = activityDetailsRoute(true, activityId);
-		console.log(url);
 		this.router.navigateByUrl(url);
 	}
 }
