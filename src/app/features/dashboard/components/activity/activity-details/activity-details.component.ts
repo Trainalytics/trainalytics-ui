@@ -40,43 +40,29 @@ export class ActivityDetailsComponent implements OnInit {
 					data: this.activity.allHr,
 					fill: true,
 					borderColor: documentStyle.getPropertyValue('--red-600'),
-					backgroundColor: 'rgba(217,54,43,0.2)'
+					tension: 0,
+					pointStyle: false,
+					backgroundColor: 'rgba(217,54,43,0.25)',
+					borderWidth: 1
 				}
 			]
 		};
 	}
 
 	private _initHrOptions(): void {
-		const documentStyle = getComputedStyle(document.documentElement);
-		const textColor = documentStyle.getPropertyValue('--text-color');
-		const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
-		const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
-
 		this.hrOptions = {
 			maintainAspectRatio: false,
-			aspectRatio: 0.6,
-			plugins: {
-				legend: {
-					labels: {
-						color: textColor
-					}
-				}
-			},
+			aspectRatio: 1,
 			scales: {
 				x: {
-					ticks: {
-						color: textColorSecondary
-					},
+					display: false,
 					grid: {
-						color: surfaceBorder
-					}
+						display: false,
+					},
 				},
 				y: {
-					ticks: {
-						color: textColorSecondary
-					},
 					grid: {
-						color: surfaceBorder
+						display: false,
 					}
 				}
 			}
