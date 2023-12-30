@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivityDto } from '@models/activity/activity-dto.model';
 import { activityDtoMock } from '@testing/mocks/activity-dto.mock';
-import { count } from 'rxjs';
 
 @Component({
 	selector: 'trainalytics-activity-details',
@@ -43,7 +42,7 @@ export class ActivityDetailsComponent implements OnInit {
 					tension: 0,
 					pointStyle: false,
 					backgroundColor: 'rgba(217,54,43,0.25)',
-					borderWidth: 1
+					borderWidth: 1,
 				}
 			]
 		};
@@ -52,20 +51,35 @@ export class ActivityDetailsComponent implements OnInit {
 	private _initHrOptions(): void {
 		this.hrOptions = {
 			maintainAspectRatio: false,
-			aspectRatio: 1,
+			aspectRatio: 1.5,
+			responsive: true,
+			plugins: {
+				title: {
+					display: true,
+					text: 'Heart rate',
+					position: 'left',
+				},
+				// Hide the legend of the graphic
+				legend: {
+					display: false,
+				}
+			},
 			scales: {
 				x: {
-					display: false,
+					// Hide the labels of the datasets
+					ticks: {
+						display: false
+					},
 					grid: {
 						display: false,
-					},
+					}
 				},
 				y: {
 					grid: {
 						display: false,
 					}
 				}
-			}
+			},
 		};
 	}
 }
