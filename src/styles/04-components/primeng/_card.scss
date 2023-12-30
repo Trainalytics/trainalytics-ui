@@ -22,4 +22,9 @@
 	box-shadow: none;
 	border: 1px solid #dbdbdb;
 	border-radius: 0%;
+	margin: 0 0 0.75em;
+
+	.p-card-content {
+		padding: 0;
+	}
 }
