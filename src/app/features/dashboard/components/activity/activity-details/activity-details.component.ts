@@ -35,7 +35,6 @@ export class ActivityDetailsComponent implements OnInit {
 			labels: this.activity.allHr,
 			datasets: [
 				{
-					label: 'Heart Rate',
 					data: this.activity.allHr,
 					fill: true,
 					borderColor: documentStyle.getPropertyValue('--red-600'),
