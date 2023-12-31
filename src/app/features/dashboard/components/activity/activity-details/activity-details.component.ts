@@ -14,7 +14,9 @@ export class ActivityDetailsComponent implements OnInit {
 	 */
 	activity: ActivityDto;
 
-	data: any;
+	hrData: any;
+
+	paceData: any;
 
 	hrOptions: any;
 
@@ -33,7 +35,7 @@ export class ActivityDetailsComponent implements OnInit {
 		const documentStyle = getComputedStyle(document.documentElement);
 		this.activity = activityDtoMock;
 
-		this.data = {
+		this.hrData = {
 			labels: this.activity.allHr,
 			datasets: [
 				{
@@ -43,6 +45,21 @@ export class ActivityDetailsComponent implements OnInit {
 					tension: 0,
 					pointStyle: false,
 					backgroundColor: 'rgba(217,54,43,0.25)',
+					borderWidth: 1,
+				}
+			]
+		};
+
+		this.paceData = {
+			labels: this.activity.allPace,
+			datasets: [
+				{
+					data: this.activity.allPace,
+					fill: true,
+					borderColor: documentStyle.getPropertyValue('--blue-600'),
+					tension: 0,
+					pointStyle: false,
+					backgroundColor: 'rgba(28,128,207,0.25)',
 					borderWidth: 1,
 				}
 			]
