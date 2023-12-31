@@ -18,8 +18,10 @@ export class ActivityDetailsComponent implements OnInit {
 
 	hrOptions: any;
 
+	paceOptions: any;
+
 	ngOnInit(): void {
-		this._initHrOptions();
+		this._initOptions();
 		this._initData();
 	}
 
@@ -47,7 +49,7 @@ export class ActivityDetailsComponent implements OnInit {
 		};
 	}
 
-	private _initHrOptions(): void {
+	private _initOptions(): void {
 		this.hrOptions = {
 			maintainAspectRatio: false,
 			aspectRatio: 1.5,
@@ -55,7 +57,40 @@ export class ActivityDetailsComponent implements OnInit {
 			plugins: {
 				title: {
 					display: true,
-					text: 'Heart rate',
+					text: 'Heart Rate',
+					position: 'left',
+				},
+				// Hide the legend of the graphic
+				legend: {
+					display: false,
+				}
+			},
+			scales: {
+				x: {
+					// Hide the labels of the datasets
+					ticks: {
+						display: false
+					},
+					grid: {
+						display: false,
+					}
+				},
+				y: {
+					grid: {
+						display: false,
+					}
+				}
+			},
+		};
+
+		this.paceOptions = {
+			maintainAspectRatio: false,
+			aspectRatio: 1.5,
+			responsive: true,
+			plugins: {
+				title: {
+					display: true,
+					text: 'Pace',
 					position: 'left',
 				},
 				// Hide the legend of the graphic
