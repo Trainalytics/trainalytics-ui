@@ -1,4 +1,4 @@
-.p-card.activity-card {
+.p-card.dashboard-card {
 	box-shadow: none;
 	border: 1px solid #e9ecef;
 	margin: 0 0.75em;
@@ -15,5 +15,16 @@
 
 	.p-card-footer {
 		text-align: right;
+	}
+}
+
+.p-card.activity-details-card {
+	box-shadow: none;
+	border: 1px solid #dbdbdb;
+	border-radius: 0%;
+	margin: 0 0 0.75em;
+
+	.p-card-content {
+		padding: 0;
 	}
 }

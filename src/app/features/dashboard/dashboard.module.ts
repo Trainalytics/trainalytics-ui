@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardLayoutComponent } from './dashboard-layout/dashboard-layout.component';
+import { DashboardLayoutComponent } from './components/dashboard-layout/dashboard-layout.component';
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@core/core.module';
-import { DashboardTableComponent } from './dashboard-table/dashboard-table.component';
-import { ActivityCardComponent } from './activity/activity-card/activity-card.component';
-import { ActivityDetailsComponent } from './activity/activity-details/activity-details.component';
+import { DashboardTableComponent } from './components/dashboard-table/dashboard-table.component';
+import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
+import { ActivityDetailsComponent } from './components/activity/activity-details/activity-details.component';
 
 
 @NgModule({
 	declarations: [
 		DashboardLayoutComponent,
 		DashboardTableComponent,
-		ActivityCardComponent,
+		DashboardCardComponent,
 		ActivityDetailsComponent,
 	],
 	imports: [

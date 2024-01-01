@@ -17,6 +17,7 @@ export class DashboardTableComponent implements OnInit {
 	initActivites(): void {
 		this.activites = [
 			{
+				id: '1',
 				name: 'VMA-S5-2-Endurance Fontamentale',
 				type: 'running',
 				averageHr: 135,
@@ -25,6 +26,7 @@ export class DashboardTableComponent implements OnInit {
 				duration: '1:10:35'
 			},
 			{
+				id: '2',
 				name: 'FTP-S3-3-Endurance Fontamentale',
 				type: 'cycling',
 				averageHr: 115,
