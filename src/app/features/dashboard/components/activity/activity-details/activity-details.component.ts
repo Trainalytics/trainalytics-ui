@@ -136,7 +136,7 @@ export class ActivityDetailsComponent implements OnInit {
 					}
 				},
 				y: {
-					min: lowestPace,
+					min: lowestPace - 1,
 					max: highestPace,
 					grid: {
 						display: false,
