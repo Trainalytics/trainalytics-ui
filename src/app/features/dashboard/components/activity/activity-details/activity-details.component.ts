@@ -35,8 +35,8 @@ export class ActivityDetailsComponent implements OnInit {
 	paceOptions: any;
 
 	ngOnInit(): void {
-		this._initOptions();
 		this._initData();
+		this._initOptions();
 	}
 
 	private _initData(): void {
@@ -57,8 +57,6 @@ export class ActivityDetailsComponent implements OnInit {
 				}
 			]
 		};
-
-		console.log(this.activity.allPace);
 		this.paceData = {
 			labels: this.activity.allPace,
 			datasets: [
@@ -76,6 +74,9 @@ export class ActivityDetailsComponent implements OnInit {
 	}
 
 	private _initOptions(): void {
+		const lowestPace = Math.min(...this.activity.allPace);
+		const highestPace = Math.max(...this.activity.allPace);
+
 		this.heartRateOptions = {
 			maintainAspectRatio: false,
 			aspectRatio: 1.5,
@@ -116,7 +117,7 @@ export class ActivityDetailsComponent implements OnInit {
 			plugins: {
 				title: {
 					display: true,
-					text: 'Pace',
+					text: 'Pace - min/km',
 					position: 'left',
 				},
 				// Hide the legend of the graphic
@@ -135,6 +136,8 @@ export class ActivityDetailsComponent implements OnInit {
 					}
 				},
 				y: {
+					min: lowestPace,
+					max: highestPace,
 					grid: {
 						display: false,
 					}
