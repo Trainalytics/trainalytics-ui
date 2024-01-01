@@ -35,5 +35,5 @@ export interface ActivityDto {
 	/**
 	 * Array containing all paces recorded during the activity
 	 */
-	allPace: Array<string>;
+	allPace: Array<number>;
 }

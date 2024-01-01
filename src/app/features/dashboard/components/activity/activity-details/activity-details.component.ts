@@ -58,6 +58,7 @@ export class ActivityDetailsComponent implements OnInit {
 			]
 		};
 
+		console.log(this.activity.allPace);
 		this.paceData = {
 			labels: this.activity.allPace,
 			datasets: [

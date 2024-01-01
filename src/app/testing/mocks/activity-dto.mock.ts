@@ -8,19 +8,30 @@ export const activityDtoMock: ActivityDto = {
 	averagePace: '5:30',
 	distance: 10.5,
 	duration: '1:10:35',
-	allHr: generateFakeHr(160),
-	allPace: []
+	allHr: generateFakeHeartRateData(1000),
+	allPace: generateFakePaceData(),
 };
 
-function generateFakeHr(numberOfHr: number): Array<number> {
+function generateFakeHeartRateData(numberOfheartRate: number): Array<number> {
+	const heartRateMin = 70;
+	const heartRateMax = 165;
+	let heartRateData = [];
 
-	const hrMin = 70;
-	const hrMax = 165;
-	let hrData = [];
-
-	for (let i = 0; i < numberOfHr; i++) {
-		hrData[i] = Math.floor(Math.random() * (hrMax - hrMin)) + hrMin;
+	for (let i = 0; i < numberOfheartRate; i++) {
+		heartRateData[i] = Math.floor(Math.random() * (heartRateMax - heartRateMin)) + heartRateMin;
 	}
 
-	return hrData;
+	return heartRateData;
+}
+
+function generateFakePaceData(): Array<number> {
+	const paceMin = 4.0;
+	const paceMax = 6.0;
+	let paceData = [];
+
+	for (let i = 0; i < 160; i++) {
+		paceData[i] = parseFloat((Math.random() * (paceMax - paceMin) + paceMin).toFixed(2));
+	}
+
+	return paceData;
 }
