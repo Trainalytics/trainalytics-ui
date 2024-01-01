@@ -14,12 +14,24 @@ export class ActivityDetailsComponent implements OnInit {
 	 */
 	activity: ActivityDto;
 
-	hrData: any;
+	/**
+	 * All the heart rate data
+	 */
+	heartRateData: any;
 
+	/**
+	 * All the pace data
+	 */
 	paceData: any;
 
-	hrOptions: any;
+	/**
+	 * Options for the heart rate graphic
+	 */
+	heartRateOptions: any;
 
+	/**
+	 * Options for the pace graphic
+	 */
 	paceOptions: any;
 
 	ngOnInit(): void {
@@ -27,15 +39,11 @@ export class ActivityDetailsComponent implements OnInit {
 		this._initData();
 	}
 
-	/**
-	 * TODO : Make this chart for the heart rate + power data
-	 */
-
 	private _initData(): void {
 		const documentStyle = getComputedStyle(document.documentElement);
 		this.activity = activityDtoMock;
 
-		this.hrData = {
+		this.heartRateData = {
 			labels: this.activity.allHr,
 			datasets: [
 				{
@@ -67,7 +75,7 @@ export class ActivityDetailsComponent implements OnInit {
 	}
 
 	private _initOptions(): void {
-		this.hrOptions = {
+		this.heartRateOptions = {
 			maintainAspectRatio: false,
 			aspectRatio: 1.5,
 			responsive: true,
