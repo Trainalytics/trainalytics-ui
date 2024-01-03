@@ -111,7 +111,7 @@ export class ActivityDetailsComponent implements OnInit {
 
 		this.paceOptions = {
 			maintainAspectRatio: false,
-			aspectRatio: 1.5,
+			aspectRatio: 1.25,
 			responsive: true,
 			plugins: {
 				// Hide the legend of the graphic
