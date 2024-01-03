@@ -10,3 +10,17 @@
 .chart {
 	width: 80%;
 }
+
+@media screen and (max-width: 950px) {
+	.flex {
+		flex-direction: column;
+	}
+	.table {
+		width: 100%;
+		margin-right: 0em;
+		margin-bottom: 0.5em;
+	}
+	.chart {
+		width: 100%;
+	}
+}
