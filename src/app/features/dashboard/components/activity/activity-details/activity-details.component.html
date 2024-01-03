@@ -10,28 +10,28 @@
 				>
 					<ng-template pTemplate="body">
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 					</ng-template>
 				</p-table>
@@ -39,12 +39,13 @@
 			<div class="chart">
 				<p-chart
 					type="line"
-					[data]="heartRateData"
-					[options]="heartRateOptions"
+					[data]="hrData"
+					[options]="hrOptions"
 				></p-chart>
 			</div>
 		</div>
 	</p-panel>
+	<br />
 	<p-panel header="Pace data">
 		<div class="flex">
 			<div class="table">
@@ -56,28 +57,28 @@
 				>
 					<ng-template pTemplate="body">
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
-							<td>{{ activity.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 					</ng-template>
 				</p-table>

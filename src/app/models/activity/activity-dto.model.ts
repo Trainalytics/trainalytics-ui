@@ -13,13 +13,44 @@ export interface ActivityDto {
 	 */
 	type: string;
 	/**
-	 * The average heart rate of the activity
+	 * Data related to the heart rate of the activity
 	 */
-	averageHr: number;
-	/**
-	 * The average pace of the activity
-	 */
-	averagePace: string;
+	hrData: {
+		/**
+		 * The average heart rate of the activity
+		 */
+		averageHr: number;
+		/**
+		 * The average heart rate of the activity
+		 */
+		maxHr: number;
+		/**
+		 * Array containing all heart rates recorded during activity
+		 */
+		allHr: Array<number>;
+	};
+	paceData: {
+		/**
+		 * The average pace of the activity
+		 */
+		averagePace: string;
+		/**
+		 * The average pace of the activity
+		 */
+		maxPace: string;
+		/**
+		 * The average pace of the activity
+		 */
+		averageSpeed: number;
+		/**
+		 * The average pace of the activity
+		 */
+		maxSpeed: number;
+		/**
+		 * Array containing all paces recorded during the activity
+		 */
+		allPace: Array<number>;
+	};
 	/**
 	 * The distance of the activity
 	 */
@@ -28,12 +59,4 @@ export interface ActivityDto {
 	 * The duration of the activity
 	 */
 	duration: string;
-	/**
-	 * Array containing all heart rates recorded during activity
-	 */
-	allHr: Array<number>;
-	/**
-	 * Array containing all paces recorded during the activity
-	 */
-	allPace: Array<number>;
 }

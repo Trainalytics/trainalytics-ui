@@ -17,7 +17,7 @@ export class ActivityDetailsComponent implements OnInit {
 	/**
 	 * All the heart rate data
 	 */
-	heartRateData: any;
+	hrData: any;
 
 	/**
 	 * All the pace data
@@ -27,7 +27,7 @@ export class ActivityDetailsComponent implements OnInit {
 	/**
 	 * Options for the heart rate graphic
 	 */
-	heartRateOptions: any;
+	hrOptions: any;
 
 	/**
 	 * Options for the pace graphic
@@ -43,11 +43,11 @@ export class ActivityDetailsComponent implements OnInit {
 		const documentStyle = getComputedStyle(document.documentElement);
 		this.activity = activityDtoMock;
 
-		this.heartRateData = {
-			labels: this.activity.allHr,
+		this.hrData = {
+			labels: this.activity.hrData.allHr,
 			datasets: [
 				{
-					data: this.activity.allHr,
+					data: this.activity.hrData.allHr,
 					fill: true,
 					borderColor: documentStyle.getPropertyValue('--red-600'),
 					tension: 0,
@@ -58,10 +58,10 @@ export class ActivityDetailsComponent implements OnInit {
 			]
 		};
 		this.paceData = {
-			labels: this.activity.allPace,
+			labels: this.activity.paceData.allPace,
 			datasets: [
 				{
-					data: this.activity.allPace,
+					data: this.activity.paceData.allPace,
 					fill: true,
 					borderColor: documentStyle.getPropertyValue('--blue-600'),
 					tension: 0,
@@ -74,10 +74,12 @@ export class ActivityDetailsComponent implements OnInit {
 	}
 
 	private _initOptions(): void {
-		const lowestPace = Math.min(...this.activity.allPace);
-		const highestPace = Math.max(...this.activity.allPace);
+		const lowestPace = Math.min(...this.activity.paceData.allPace);
+		const highestPace = Math.max(...this.activity.paceData.allPace);
+		const lowestHr = Math.min(...this.activity.hrData.allHr);
+		const highestHr = Math.max(...this.activity.hrData.allHr);
 
-		this.heartRateOptions = {
+		this.hrOptions = {
 			maintainAspectRatio: false,
 			aspectRatio: 1.25,
 			responsive: true,
@@ -98,6 +100,8 @@ export class ActivityDetailsComponent implements OnInit {
 					}
 				},
 				y: {
+					min: lowestHr,
+					max: highestHr,
 					grid: {
 						display: false,
 					}
