@@ -79,14 +79,9 @@ export class ActivityDetailsComponent implements OnInit {
 
 		this.heartRateOptions = {
 			maintainAspectRatio: false,
-			aspectRatio: 1.5,
+			aspectRatio: 1.25,
 			responsive: true,
 			plugins: {
-				title: {
-					display: true,
-					text: 'Heart Rate',
-					position: 'left',
-				},
 				// Hide the legend of the graphic
 				legend: {
 					display: false,
@@ -115,11 +110,6 @@ export class ActivityDetailsComponent implements OnInit {
 			aspectRatio: 1.5,
 			responsive: true,
 			plugins: {
-				title: {
-					display: true,
-					text: 'Pace - min/km',
-					position: 'left',
-				},
 				// Hide the legend of the graphic
 				legend: {
 					display: false,
