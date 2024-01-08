@@ -64,6 +64,39 @@
 			"sunday": "So"
 		}
 	},
+	"activity-details": {
+		"distance": "Distanz",
+		"timing": {
+			"duration_time": "Zeit",
+			"moving_time": "Zeit in Bewegung",
+			"elapsed_time": "Verstrichene Zeit"
+		},
+		"pace": {
+			"avg_pace": "Durchschnittliche Pace",
+			"avg_moving_pace": "Durchschnittliche Pace in Bewegung",
+			"best_pace": "Beste Pace"
+		},
+		"heart_rate": {
+			"avg_hr": "Durchschnittliche Herzfrequenz",
+			"max_hr": "Maximale Herzfrequenz"
+		},
+		"running_dynamics": {
+			"avg_run_cadence": "Durchschnittliche Schrittfrequenz",
+			"max_run_cadence": "Max. Schrittfrequenz",
+			"avg_stride_length": "Durchschnittliche Schrittlänge"
+		},
+		"elevation": {
+			"total_ascent": "Anstieg gesamt",
+			"total_descent": "Abstieg gesamt",
+			"min_elev": "Minimale Höhe",
+			"max_elev": "Maximale Höhe"
+		},
+		"temperature": {
+			"avg_temp": "Durchschnittliche Temperatur",
+			"min_temp": "Minimale Temperatur",
+			"max_temp": "Maximale Temperatur"
+		}
+	},
 	"primeng": {
 		"startsWith": "Beginnt mit",
 		"contains": "Enthält",

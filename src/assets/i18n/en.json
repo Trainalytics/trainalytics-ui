@@ -64,6 +64,39 @@
 			"sunday": "Su"
 		}
 	},
+	"activity-details": {
+		"distance": "Distance",
+		"timing": {
+			"duration_time": "Time",
+			"moving_time": "Moving Time",
+			"elapsed_time": "Elapsed Time"
+		},
+		"pace": {
+			"avg_pace": "Average Pace",
+			"avg_moving_pace": "Average Moving Pace",
+			"best_pace": "Best Pace"
+		},
+		"heart_rate": {
+			"avg_hr": "Average HR",
+			"max_hr": "Max HR"
+		},
+		"running_dynamics": {
+			"avg_run_cadence": "Average Run Cadence",
+			"max_run_cadence": "Max Run Cadence",
+			"avg_stride_length": "Average Stride Length"
+		},
+		"elevation": {
+			"total_ascent": "Total Ascent",
+			"total_descent": "Total Descent",
+			"min_elev": "Min Elev",
+			"max_elev": "Max Elev"
+		},
+		"temperature": {
+			"avg_temp": "Average Temp",
+			"min_temp": "Min Temp",
+			"max_temp": "Max Temp"
+		}
+	},
 	"primeng": {
 		"startsWith": "Starts with",
 		"contains": "Contains",
