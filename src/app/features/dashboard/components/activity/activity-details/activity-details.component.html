@@ -1,7 +1,26 @@
 <div class="p-3">
+	<p-panel header="Overview">
+		<div class="overview-table">
+			<p-table
+				[value]="[1]"
+				styleClass="p-datatable-gridlines details-datatable"
+			>
+				<ng-template pTemplate="body">
+					<tr>
+						<td>{{ activity.distance }}<br />Distance</td>
+						<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+					</tr>
+				</ng-template>
+			</p-table>
+		</div>
+	</p-panel>
+	<br />
 	<p-panel header="Heart Rate data">
 		<div class="flex">
-			<div class="table">
+			<div class="hr-table">
 				<p-table
 					[scrollable]="true"
 					scrollHeight="240px"
@@ -48,7 +67,7 @@
 	<br />
 	<p-panel header="Pace data">
 		<div class="flex">
-			<div class="table">
+			<div class="pace-table">
 				<p-table
 					[scrollable]="true"
 					scrollHeight="240px"
