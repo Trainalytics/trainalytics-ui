@@ -64,6 +64,47 @@
 			"sunday": "Di"
 		}
 	},
+	"activity-details": {
+		"panel_header": {
+			"overview": "Vue d'ensemble",
+			"heart_rate_data": "Données de fréquence cardiaque",
+			"pace_data": "Données d'allure"
+		},
+		"distance": "Distance",
+		"timing": {
+			"duration_time": "Temps",
+			"moving_time": "Temps de déplacement",
+			"elapsed_time": "Temps écoulé"
+		},
+		"pace": {
+			"avg_pace": "Allure moyenne",
+			"avg_moving_pace": "Allure moyenne de déplacement",
+			"best_pace": "Meilleure allure"
+		},
+		"heart_rate": {
+			"avg_hr": "Fréquence cardiaque moyenne",
+			"max_hr": "Fréquence cardiaque maximale"
+		},
+		"running_dynamics": {
+			"avg_run_cadence": "Cadence de course moyenne",
+			"max_run_cadence": "Cadence de course maximale",
+			"avg_stride_length": "Longueur moyenne des foulées"
+		},
+		"elevation": {
+			"total_ascent": "Ascension totale",
+			"total_descent": "Descente totale",
+			"min_elev": "Altitude minimale",
+			"max_elev": "Altitude maximale"
+		},
+		"temperature": {
+			"avg_temp": "Température moyenne",
+			"min_temp": "Température minimale",
+			"max_temp": "Température maximale"
+		},
+		"nutrition": {
+			"burned_calories": "Calories brûlées"
+		}
+	},
 	"primeng": {
 		"startsWith": "Commence par",
 		"contains": "Contient",

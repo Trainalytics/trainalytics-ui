@@ -4,12 +4,20 @@ export const activityDtoMock: ActivityDto = {
 	id: '1',
 	name: 'VMA-S5-2-Endurance Fontamentale',
 	type: 'running',
-	averageHr: 135,
-	averagePace: '5:30',
+	hrData: {
+		averageHr: 130,
+		maxHr: 0,
+		allHr: generateFakeHeartRateData(1000),
+	},
+	paceData: {
+		averagePace: '5:30',
+		maxPace: '',
+		averageSpeed: 0,
+		maxSpeed: 0,
+		allPace: generateFakePaceData(),
+	},
 	distance: 10.5,
 	duration: '1:10:35',
-	allHr: generateFakeHeartRateData(1000),
-	allPace: generateFakePaceData(),
 };
 
 function generateFakeHeartRateData(numberOfheartRate: number): Array<number> {
