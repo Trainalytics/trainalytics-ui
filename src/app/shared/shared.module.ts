@@ -12,6 +12,8 @@ import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
+import { ChartModule } from 'primeng/chart';
+import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
 	declarations: [],
@@ -27,7 +29,9 @@ import { DividerModule } from 'primeng/divider';
 		PanelModule,
 		TableModule,
 		CardModule,
-		DividerModule
+		DividerModule,
+		ChartModule,
+		FieldsetModule
 	],
 	exports: [
 		TranslocoModule,
@@ -41,7 +45,9 @@ import { DividerModule } from 'primeng/divider';
 		PanelModule,
 		TableModule,
 		CardModule,
-		DividerModule
+		DividerModule,
+		ChartModule,
+		FieldsetModule
 	],
 	providers: [
 		MessageService,

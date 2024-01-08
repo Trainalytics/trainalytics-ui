@@ -1,5 +1,9 @@
 export interface ActivityDto {
 	/**
+	 * Id of the activity
+	 */
+	id: string;
+	/**
 	 * The name of the activity
 	 */
 	name: string;
@@ -31,5 +35,5 @@ export interface ActivityDto {
 	/**
 	 * Array containing all paces recorded during the activity
 	 */
-	allPace: Array<string>;
+	allPace: Array<number>;
 }
