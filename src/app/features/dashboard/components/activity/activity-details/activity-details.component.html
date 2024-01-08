@@ -1,6 +1,6 @@
 <div class="p-3">
 	<p-panel
-		header="Overview"
+		[header]="'activity-details.panel_header.overview' | transloco"
 		styleClass="activity-details-panel"
 	>
 		<div class="overview-table">
@@ -35,8 +35,12 @@
 							{{ "activity-details.heart_rate.max_hr" | transloco }}
 						</td>
 						<td>
-							{{ activity.hrData.maxHr }}<br />
+							{{ activity.hrData.maxHr }} m<br />
 							{{ "activity-details.elevation.total_ascent" | transloco }}
+						</td>
+						<td>
+							{{ activity.hrData.maxHr }} kcal<br />
+							{{ "activity-details.nutrition.burned_calories" | transloco }}
 						</td>
 					</tr>
 				</ng-template>
@@ -45,7 +49,7 @@
 	</p-panel>
 	<br />
 	<p-panel
-		header="Heart Rate data"
+		[header]="'activity-details.panel_header.heart_rate_data' | transloco"
 		styleClass="activity-details-panel"
 	>
 		<div class="flex">
@@ -95,7 +99,7 @@
 	</p-panel>
 	<br />
 	<p-panel
-		header="Pace data"
+		[header]="'activity-details.panel_header.pace_data' | transloco"
 		styleClass="activity-details-panel"
 	>
 		<div class="flex">

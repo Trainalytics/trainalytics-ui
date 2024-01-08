@@ -65,6 +65,11 @@
 		}
 	},
 	"activity-details": {
+		"panel_header": {
+			"overview": "Vue d'ensemble",
+			"heart_rate_data": "Données de fréquence cardiaque",
+			"pace_data": "Données d'allure"
+		},
 		"distance": "Distance",
 		"timing": {
 			"duration_time": "Temps",
@@ -95,6 +100,9 @@
 			"avg_temp": "Température moyenne",
 			"min_temp": "Température minimale",
 			"max_temp": "Température maximale"
+		},
+		"nutrition": {
+			"burned_calories": "Calories brûlées"
 		}
 	},
 	"primeng": {

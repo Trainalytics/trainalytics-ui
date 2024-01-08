@@ -65,6 +65,11 @@
 		}
 	},
 	"activity-details": {
+		"panel_header": {
+			"overview": "Übersicht",
+			"heart_rate_data": "Herzfrequenzdaten",
+			"pace_data": "Pacedaten"
+		},
 		"distance": "Distanz",
 		"timing": {
 			"duration_time": "Zeit",
@@ -95,6 +100,9 @@
 			"avg_temp": "Durchschnittliche Temperatur",
 			"min_temp": "Minimale Temperatur",
 			"max_temp": "Maximale Temperatur"
+		},
+		"nutrition": {
+			"burned_calories": "Verbrannte Kalorien"
 		}
 	},
 	"primeng": {
