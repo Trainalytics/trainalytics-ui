@@ -7,11 +7,34 @@
 			>
 				<ng-template pTemplate="body">
 					<tr>
-						<td>{{ activity.distance }}<br />Distance</td>
-						<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						<td>
+							{{ activity.distance }} km<br />
+							{{ "activity-details.distance" | transloco }}
+						</td>
+						<td>
+							{{ activity.duration }}<br />
+							{{ "activity-details.timing.duration_time" | transloco }}
+						</td>
+						<td>
+							{{ activity.hrData.averageHr }}<br />
+							{{ "activity-details.timing.elapsed_time" | transloco }}
+						</td>
+						<td>
+							{{ activity.hrData.averageHr }} /km<br />
+							{{ "activity-details.pace.avg_pace" | transloco }}
+						</td>
+						<td>
+							{{ activity.hrData.averageHr }} bpm<br />
+							{{ "activity-details.heart_rate.avg_hr" | transloco }}
+						</td>
+						<td>
+							{{ activity.hrData.maxHr }} bpm<br />
+							{{ "activity-details.heart_rate.max_hr" | transloco }}
+						</td>
+						<td>
+							{{ activity.hrData.maxHr }}<br />
+							{{ "activity-details.elevation.total_ascent" | transloco }}
+						</td>
 					</tr>
 				</ng-template>
 			</p-table>

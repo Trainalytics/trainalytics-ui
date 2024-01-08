@@ -13,7 +13,7 @@ export interface ActivityDto {
 	 */
 	type: string;
 	/**
-	 * Data related to the heart rate of the activity
+	 * Heart rate data of the activity
 	 */
 	hrData: {
 		/**
@@ -29,6 +29,9 @@ export interface ActivityDto {
 		 */
 		allHr: Array<number>;
 	};
+	/**
+	 * Pace data of the activity
+	 */
 	paceData: {
 		/**
 		 * The average pace of the activity
