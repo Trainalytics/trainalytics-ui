@@ -68,7 +68,8 @@
 		"panel_header": {
 			"overview": "Übersicht",
 			"heart_rate_data": "Herzfrequenzdaten",
-			"pace_data": "Pacedaten"
+			"pace_data": "Pacedaten",
+			"course_and_elevation_data": "Distanz und Höhenunterschied"
 		},
 		"distance": "Distanz",
 		"timing": {

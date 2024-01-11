@@ -100,8 +100,8 @@ export class ActivityDetailsComponent implements OnInit {
 					}
 				},
 				y: {
-					min: lowestHr,
-					max: highestHr,
+					min: lowestHr - 50,
+					max: highestHr + 50,
 					grid: {
 						display: false,
 					}

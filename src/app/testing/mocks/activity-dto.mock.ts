@@ -21,7 +21,7 @@ export const activityDtoMock: ActivityDto = {
 };
 
 function generateFakeHeartRateData(numberOfheartRate: number): Array<number> {
-	const heartRateMin = 70;
+	const heartRateMin = 110;
 	const heartRateMax = 165;
 	let heartRateData = [];
 

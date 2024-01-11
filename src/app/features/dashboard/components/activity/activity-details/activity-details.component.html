@@ -62,8 +62,14 @@
 				>
 					<ng-template pTemplate="body">
 						<tr>
-							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+							<td>
+								{{ activity.hrData.averageHr }} /km<br />
+								{{ "activity-details.pace.avg_pace" | transloco }}
+							</td>
+							<td>
+								{{ activity.hrData.averageHr }} bpm<br />
+								{{ "activity-details.heart_rate.avg_hr" | transloco }}
+							</td>
 						</tr>
 						<tr>
 							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
@@ -100,6 +106,56 @@
 	<br />
 	<p-panel
 		[header]="'activity-details.panel_header.pace_data' | transloco"
+		styleClass="activity-details-panel"
+	>
+		<div class="flex">
+			<div class="pace-table">
+				<p-table
+					[scrollable]="true"
+					scrollHeight="240px"
+					[value]="[1]"
+					styleClass="p-datatable-gridlines p-datatable-striped"
+				>
+					<ng-template pTemplate="body">
+						<tr>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+						<tr>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+						<tr>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+						<tr>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+						<tr>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+						<tr>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+					</ng-template>
+				</p-table>
+			</div>
+			<div class="chart">
+				<p-chart
+					type="line"
+					[data]="paceData"
+					[options]="paceOptions"
+				></p-chart>
+			</div>
+		</div>
+	</p-panel>
+	<br />
+	<p-panel
+		[header]="'activity-details.panel_header.course_and_elevation_data' | transloco"
 		styleClass="activity-details-panel"
 	>
 		<div class="flex">

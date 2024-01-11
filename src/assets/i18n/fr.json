@@ -68,7 +68,8 @@
 		"panel_header": {
 			"overview": "Vue d'ensemble",
 			"heart_rate_data": "Données de fréquence cardiaque",
-			"pace_data": "Données d'allure"
+			"pace_data": "Données d'allure",
+			"course_and_elevation_data": "Données de course et d'altitude"
 		},
 		"distance": "Distance",
 		"timing": {
