@@ -25,6 +25,11 @@ export class ActivityDetailsComponent implements OnInit {
 	paceData: any;
 
 	/**
+	 * All the pace data
+	 */
+	courseElevationData: any;
+
+	/**
 	 * Options for the heart rate graphic
 	 */
 	hrOptions: any;
@@ -33,6 +38,11 @@ export class ActivityDetailsComponent implements OnInit {
 	 * Options for the pace graphic
 	 */
 	paceOptions: any;
+
+	/**
+	 * Options for the pace graphic
+	 */
+	courseElevationOptions: any;
 
 	ngOnInit(): void {
 		this._initData();
@@ -67,6 +77,20 @@ export class ActivityDetailsComponent implements OnInit {
 					tension: 0,
 					pointStyle: false,
 					backgroundColor: 'rgba(28,128,207,0.25)',
+					borderWidth: 1,
+				}
+			]
+		};
+		this.courseElevationData = {
+			labels: this.activity.paceData.allPace,
+			datasets: [
+				{
+					data: this.activity.paceData.allPace,
+					fill: true,
+					borderColor: documentStyle.getPropertyValue('--yellow-600'),
+					tension: 0,
+					pointStyle: false,
+					backgroundColor: 'rgba(213,163,38,0.25)',
 					borderWidth: 1,
 				}
 			]
@@ -110,6 +134,36 @@ export class ActivityDetailsComponent implements OnInit {
 		};
 
 		this.paceOptions = {
+			maintainAspectRatio: false,
+			aspectRatio: 1.25,
+			responsive: true,
+			plugins: {
+				// Hide the legend of the graphic
+				legend: {
+					display: false,
+				}
+			},
+			scales: {
+				x: {
+					// Hide the labels of the datasets
+					ticks: {
+						display: false
+					},
+					grid: {
+						display: false,
+					}
+				},
+				y: {
+					min: lowestPace - 1,
+					max: highestPace,
+					grid: {
+						display: false,
+					}
+				}
+			},
+		};
+
+		this.courseElevationOptions = {
 			maintainAspectRatio: false,
 			aspectRatio: 1.25,
 			responsive: true,
