@@ -98,11 +98,6 @@ export class ActivityDetailsComponent implements OnInit {
 	}
 
 	private _initOptions(): void {
-		const lowestPace = Math.min(...this.activity.paceData.allPace);
-		const highestPace = Math.max(...this.activity.paceData.allPace);
-		const lowestHr = Math.min(...this.activity.hrData.allHr);
-		const highestHr = Math.max(...this.activity.hrData.allHr);
-
 		this.hrOptions = {
 			maintainAspectRatio: false,
 			aspectRatio: 1.25,
@@ -124,8 +119,8 @@ export class ActivityDetailsComponent implements OnInit {
 					}
 				},
 				y: {
-					min: lowestHr - 50,
-					max: highestHr + 50,
+					min: Math.min(...this.activity.hrData.allHr) - 50,
+					max: Math.max(...this.activity.hrData.allHr) + 50,
 					grid: {
 						display: false,
 					}
@@ -154,8 +149,8 @@ export class ActivityDetailsComponent implements OnInit {
 					}
 				},
 				y: {
-					min: lowestPace - 1,
-					max: highestPace,
+					min: Math.min(...this.activity.paceData.allPace) - 1,
+					max: Math.max(...this.activity.paceData.allPace),
 					grid: {
 						display: false,
 					}
