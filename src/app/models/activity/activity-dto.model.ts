@@ -55,6 +55,31 @@ export interface ActivityDto {
 		allPace: Array<number>;
 	};
 	/**
+	 * Elevation data of the activity
+	 */
+	elevationData: {
+		/**
+		 * The average pace of the activity
+		 */
+		totalAscent: number;
+		/**
+		 * The average pace of the activity
+		 */
+		totalDescent: number;
+		/**
+		 * The average pace of the activity
+		 */
+		minElevation: number;
+		/**
+		 * The average pace of the activity
+		 */
+		maxElevation: number;
+		/**
+		 * Array containing all paces recorded during the activity
+		 */
+		allElevation: Array<number>;
+	};
+	/**
 	 * The distance of the activity
 	 */
 	distance: number;

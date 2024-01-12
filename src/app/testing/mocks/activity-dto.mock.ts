@@ -16,6 +16,13 @@ export const activityDtoMock: ActivityDto = {
 		maxSpeed: 0,
 		allPace: generateFakePaceData(),
 	},
+	elevationData: {
+		totalAscent: 132.8,
+		totalDescent: 139,
+		minElevation: 700,
+		maxElevation: 780,
+		allElevation: generateFakeElevation(),
+	},
 	distance: 10.5,
 	duration: '1:10:35',
 };
@@ -33,13 +40,25 @@ function generateFakeHeartRateData(numberOfheartRate: number): Array<number> {
 }
 
 function generateFakePaceData(): Array<number> {
-	const paceMin = 4.0;
-	const paceMax = 6.0;
+	const minPace = 4.0;
+	const maxPace = 6.0;
 	let paceData = [];
 
 	for (let i = 0; i < 160; i++) {
-		paceData[i] = parseFloat((Math.random() * (paceMax - paceMin) + paceMin).toFixed(2));
+		paceData[i] = parseFloat((Math.random() * (maxPace - minPace) + minPace).toFixed(2));
 	}
 
 	return paceData;
+}
+
+function generateFakeElevation(): Array<number> {
+	const minElevation = 700;
+	const maxElevation = 780;
+	let elevationData = [];
+
+	for (let i = 0; i < 160; i++) {
+		elevationData[i] = parseFloat((Math.random() * (maxElevation - minElevation) + minElevation).toFixed(2));
+	}
+
+	return elevationData;
 }

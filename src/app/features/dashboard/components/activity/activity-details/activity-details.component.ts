@@ -85,7 +85,7 @@ export class ActivityDetailsComponent implements OnInit {
 			labels: this.activity.paceData.allPace,
 			datasets: [
 				{
-					data: this.activity.paceData.allPace,
+					data: this.activity.elevationData.allElevation,
 					fill: true,
 					borderColor: documentStyle.getPropertyValue('--yellow-600'),
 					tension: 0,
@@ -184,8 +184,8 @@ export class ActivityDetailsComponent implements OnInit {
 					}
 				},
 				y: {
-					min: lowestPace - 1,
-					max: highestPace,
+					min: this.activity.elevationData.minElevation - 20,
+					max: this.activity.elevationData.maxElevation + 20,
 					grid: {
 						display: false,
 					}
