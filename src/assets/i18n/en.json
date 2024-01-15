@@ -95,7 +95,8 @@
 			"total_ascent": "Total Ascent",
 			"total_descent": "Total Descent",
 			"min_elev": "Min Elev",
-			"max_elev": "Max Elev"
+			"max_elev": "Max Elev",
+			"total_ascent_descent": "Ascent / Descent"
 		},
 		"temperature": {
 			"avg_temp": "Average Temp",

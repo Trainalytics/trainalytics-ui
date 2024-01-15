@@ -95,7 +95,8 @@
 			"total_ascent": "Ascension totale",
 			"total_descent": "Descente totale",
 			"min_elev": "Altitude minimale",
-			"max_elev": "Altitude maximale"
+			"max_elev": "Altitude maximale",
+			"total_ascent_descent": "Ascention / Descente"
 		},
 		"temperature": {
 			"avg_temp": "Température moyenne",
