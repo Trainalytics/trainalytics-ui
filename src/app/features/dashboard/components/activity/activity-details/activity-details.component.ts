@@ -50,7 +50,7 @@ export class ActivityDetailsComponent implements OnInit {
 	courseElevationOptions: any;
 
 	/**
-	 * Options for the pace graphic
+	 * Options for the laps graphic
 	 */
 	lapsOptions: any;
 
@@ -106,6 +106,7 @@ export class ActivityDetailsComponent implements OnInit {
 			]
 		};
 
+		// TODO : Clean this code
 		let lapDistance: Array<number> = [];
 		let lapNumber: Array<number> = [];
 		this.activity.lapsArray.forEach(element => {
