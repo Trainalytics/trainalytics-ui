@@ -2,13 +2,17 @@ export interface LapDto {
 	/**
 	 * Number of lap
 	*/
-	lapNumbers: number;
+	number: number;
 	/**
 	 * Lap distance
 	*/
-	lapDistance: number;
+	distance: number;
+	/**
+	 * Lap distance
+	*/
+	time: string;
 	/**
 	 * Lap pace
 	*/
-	lapPace: string;
+	pace: string;
 }

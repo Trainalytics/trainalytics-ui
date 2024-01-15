@@ -30,6 +30,11 @@ export class ActivityDetailsComponent implements OnInit {
 	courseElevationData: any;
 
 	/**
+	 * All the laps data
+	 */
+	lapsData: any;
+
+	/**
 	 * Options for the heart rate graphic
 	 */
 	hrOptions: any;
@@ -43,6 +48,11 @@ export class ActivityDetailsComponent implements OnInit {
 	 * Options for the pace graphic
 	 */
 	courseElevationOptions: any;
+
+	/**
+	 * Options for the pace graphic
+	 */
+	lapsOptions: any;
 
 	ngOnInit(): void {
 		this._initData();
@@ -82,7 +92,7 @@ export class ActivityDetailsComponent implements OnInit {
 			]
 		};
 		this.courseElevationData = {
-			labels: this.activity.paceData.allPace,
+			labels: this.activity.elevationData.allElevation,
 			datasets: [
 				{
 					data: this.activity.elevationData.allElevation,
@@ -91,6 +101,26 @@ export class ActivityDetailsComponent implements OnInit {
 					tension: 0,
 					pointStyle: false,
 					backgroundColor: 'rgba(213,163,38,0.25)',
+					borderWidth: 1,
+				}
+			]
+		};
+
+		let lapDistance: Array<number> = [];
+		let lapNumber: Array<number> = [];
+		this.activity.lapsArray.forEach(element => {
+			console.log(element.time);
+			lapDistance.push(element.distance);
+			lapNumber.push(element.number);
+		});
+
+		this.lapsData = {
+			labels: lapNumber,
+			datasets: [
+				{
+					data: lapDistance,
+					borderColor: documentStyle.getPropertyValue('--teal-600'),
+					backgroundColor: 'rgba(0,128,116,0.25)',
 					borderWidth: 1,
 				}
 			]
@@ -184,6 +214,32 @@ export class ActivityDetailsComponent implements OnInit {
 					grid: {
 						display: false,
 					}
+				}
+			},
+		};
+
+		this.lapsOptions = {
+			maintainAspectRatio: false,
+			aspectRatio: 1.25,
+			responsive: true,
+			plugins: {
+				// Hide the legend of the graphic
+				legend: {
+					display: false,
+				}
+			},
+			scales: {
+				x: {
+					// Hide the labels of the datasets
+					ticks: {
+						display: true
+					},
+					grid: {
+						display: false,
+					}
+				},
+				y: {
+					beginAtZero: true,
 				}
 			},
 		};

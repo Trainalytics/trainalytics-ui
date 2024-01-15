@@ -53,12 +53,12 @@
 		styleClass="activity-details-panel"
 	>
 		<div class="flex">
-			<div class="hr-table">
+			<div class="laps-table">
 				<p-table
 					[scrollable]="true"
 					scrollHeight="240px"
-					[value]="[1]"
-					styleClass="p-datatable-striped"
+					[value]="activity.lapsArray"
+					styleClass="p-datatable-striped p-datatable-sm"
 				>
 					<ng-template pTemplate="header">
 						<tr>
@@ -68,34 +68,24 @@
 							<th>{{ "activity-details.pace.pace" | transloco }}</th>
 						</tr>
 					</ng-template>
-					<ng-template pTemplate="body">
+					<ng-template
+						pTemplate="body"
+						let-lap
+					>
 						<tr>
-							<td>1</td>
-							<td>
-								{{ activity.hrData.maxHr }} bpm<br />
-								{{ "activity-details.distance" | transloco }}
-							</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						</tr>
-						<tr>
-							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						</tr>
-						<tr>
-							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+							<td>{{ lap.number }}.</td>
+							<td>{{ lap.distance | number : "1.2" }} km</td>
+							<td>{{ lap.time }}</td>
+							<td>{{ lap.pace }}/km<br /></td>
 						</tr>
 					</ng-template>
 				</p-table>
 			</div>
 			<div class="chart">
 				<p-chart
-					type="line"
-					[data]="hrData"
-					[options]="hrOptions"
+					type="bar"
+					[data]="lapsData"
+					[options]="lapsOptions"
 				></p-chart>
 			</div>
 		</div>
@@ -200,7 +190,7 @@
 		styleClass="activity-details-panel"
 	>
 		<div class="flex">
-			<div class="pace-table">
+			<div class="elevation-table">
 				<p-table
 					[scrollable]="true"
 					scrollHeight="240px"
