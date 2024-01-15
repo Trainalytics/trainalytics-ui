@@ -6,12 +6,12 @@ export const activityDtoMock: ActivityDto = {
 	type: 'running',
 	hrData: {
 		averageHr: 130,
-		maxHr: 0,
+		maxHr: 165,
 		allHr: generateFakeHeartRateData(1000),
 	},
 	paceData: {
 		averagePace: '5:30',
-		maxPace: '',
+		maxPace: '3:45',
 		averageSpeed: 0,
 		maxSpeed: 0,
 		allPace: generateFakePaceData(),
@@ -25,6 +25,7 @@ export const activityDtoMock: ActivityDto = {
 	},
 	distance: 10.5,
 	duration: '1:10:35',
+	calories: 650
 };
 
 function generateFakeHeartRateData(numberOfheartRate: number): Array<number> {

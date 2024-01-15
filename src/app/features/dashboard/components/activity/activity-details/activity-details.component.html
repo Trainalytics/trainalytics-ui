@@ -39,12 +39,64 @@
 							{{ "activity-details.elevation.total_ascent" | transloco }}
 						</td>
 						<td>
-							{{ activity.hrData.maxHr }} kcal<br />
+							{{ activity.calories }} kcal<br />
 							{{ "activity-details.nutrition.burned_calories" | transloco }}
 						</td>
 					</tr>
 				</ng-template>
 			</p-table>
+		</div>
+	</p-panel>
+	<br />
+	<p-panel
+		[header]="'activity-details.panel_header.laps' | transloco"
+		styleClass="activity-details-panel"
+	>
+		<div class="flex">
+			<div class="hr-table">
+				<p-table
+					[scrollable]="true"
+					scrollHeight="240px"
+					[value]="[1]"
+					styleClass="p-datatable-gridlines p-datatable-striped"
+				>
+					<ng-template pTemplate="body">
+						<tr>
+							<td>
+								{{ activity.hrData.averageHr }} /km<br />
+								{{ "activity-details.heart_rate.avg_hr" | transloco }}
+							</td>
+							<td>
+								{{ activity.hrData.maxHr }} bpm<br />
+								{{ "activity-details.heart_rate.max_hr" | transloco }}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								{{ activity.calories }}<br />{{
+									"activity-details.nutrition.burned_calories" | transloco
+								}}
+							</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+						<tr>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+						<tr>
+							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
+						</tr>
+					</ng-template>
+				</p-table>
+			</div>
+			<div class="chart">
+				<p-chart
+					type="line"
+					[data]="hrData"
+					[options]="hrOptions"
+				></p-chart>
+			</div>
 		</div>
 	</p-panel>
 	<br />
@@ -64,23 +116,19 @@
 						<tr>
 							<td>
 								{{ activity.hrData.averageHr }} /km<br />
-								{{ "activity-details.pace.avg_pace" | transloco }}
-							</td>
-							<td>
-								{{ activity.hrData.averageHr }} bpm<br />
 								{{ "activity-details.heart_rate.avg_hr" | transloco }}
 							</td>
+							<td>
+								{{ activity.hrData.maxHr }} bpm<br />
+								{{ "activity-details.heart_rate.max_hr" | transloco }}
+							</td>
 						</tr>
 						<tr>
-							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						</tr>
-						<tr>
-							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						</tr>
-						<tr>
-							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
+							<td>
+								{{ activity.calories }}<br />{{
+									"activity-details.nutrition.burned_calories" | transloco
+								}}
+							</td>
 							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>
@@ -117,14 +165,6 @@
 					styleClass="p-datatable-gridlines p-datatable-striped"
 				>
 					<ng-template pTemplate="body">
-						<tr>
-							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						</tr>
-						<tr>
-							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
-							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
-						</tr>
 						<tr>
 							<td>{{ activity.paceData.averagePace }}<br />Average Pace</td>
 							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>

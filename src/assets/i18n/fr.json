@@ -67,6 +67,7 @@
 	"activity-details": {
 		"panel_header": {
 			"overview": "Vue d'ensemble",
+			"laps": "Tours",
 			"heart_rate_data": "Données de fréquence cardiaque",
 			"pace_data": "Données d'allure",
 			"course_and_elevation_data": "Données de course et d'altitude"

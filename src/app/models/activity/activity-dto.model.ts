@@ -87,4 +87,8 @@ export interface ActivityDto {
 	 * The duration of the activity
 	 */
 	duration: string;
+	/**
+	 * Calories burned durint the activity
+	 */
+	calories: number;
 }

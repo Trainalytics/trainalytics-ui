@@ -67,6 +67,7 @@
 	"activity-details": {
 		"panel_header": {
 			"overview": "Übersicht",
+			"laps": "Runden",
 			"heart_rate_data": "Herzfrequenzdaten",
 			"pace_data": "Pacedaten",
 			"course_and_elevation_data": "Distanz und Höhenunterschied"

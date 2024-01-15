@@ -67,6 +67,7 @@
 	"activity-details": {
 		"panel_header": {
 			"overview": "Overview",
+			"laps": "Laps",
 			"heart_rate_data": "Heart Rate data",
 			"pace_data": "Pace data",
 			"course_and_elevation_data": "Course and elevation data"
