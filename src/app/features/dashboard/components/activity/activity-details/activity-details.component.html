@@ -19,11 +19,11 @@
 							{{ "activity-details.timing.duration_time" | transloco }}
 						</td>
 						<td>
-							{{ activity.hrData.averageHr }}<br />
+							{{ activity.duration }}<br />
 							{{ "activity-details.timing.elapsed_time" | transloco }}
 						</td>
 						<td>
-							{{ activity.hrData.averageHr }} /km<br />
+							{{ activity.paceData.averagePace }} /km<br />
 							{{ "activity-details.pace.avg_pace" | transloco }}
 						</td>
 						<td>
@@ -35,7 +35,7 @@
 							{{ "activity-details.heart_rate.max_hr" | transloco }}
 						</td>
 						<td>
-							{{ activity.hrData.maxHr }} m<br />
+							{{ activity.elevationData.totalAscent }} m<br />
 							{{ "activity-details.elevation.total_ascent" | transloco }}
 						</td>
 						<td>
