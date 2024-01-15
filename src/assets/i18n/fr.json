@@ -79,6 +79,7 @@
 			"elapsed_time": "Temps écoulé"
 		},
 		"pace": {
+			"pace": "Allure",
 			"avg_pace": "Allure moyenne",
 			"avg_moving_pace": "Allure moyenne de déplacement",
 			"best_pace": "Meilleure allure"

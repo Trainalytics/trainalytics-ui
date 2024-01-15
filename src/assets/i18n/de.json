@@ -79,6 +79,7 @@
 			"elapsed_time": "Verstrichene Zeit"
 		},
 		"pace": {
+			"pace": "Pace",
 			"avg_pace": "Durchschnittliche Pace",
 			"avg_moving_pace": "Durchschnittliche Pace in Bewegung",
 			"best_pace": "Beste Pace"

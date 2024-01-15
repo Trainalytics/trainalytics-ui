@@ -79,6 +79,7 @@
 			"elapsed_time": "Elapsed Time"
 		},
 		"pace": {
+			"pace": "Pace",
 			"avg_pace": "Average Pace",
 			"avg_moving_pace": "Average Moving Pace",
 			"best_pace": "Best Pace"

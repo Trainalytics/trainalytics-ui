@@ -25,7 +25,39 @@ export const activityDtoMock: ActivityDto = {
 	},
 	distance: 10.5,
 	duration: '1:10:35',
-	calories: 650
+	calories: 650,
+	lapsArray: [
+		{
+			lapNumbers: 1,
+			lapDistance: 1.00,
+			lapPace: '5:28',
+		},
+		{
+			lapNumbers: 2,
+			lapDistance: 1.00,
+			lapPace: '5:27',
+		},
+		{
+			lapNumbers: 3,
+			lapDistance: 1.00,
+			lapPace: '5:29',
+		},
+		{
+			lapNumbers: 4,
+			lapDistance: 1.00,
+			lapPace: '5:25',
+		},
+		{
+			lapNumbers: 5,
+			lapDistance: 1.00,
+			lapPace: '5:20',
+		},
+		{
+			lapNumbers: 6,
+			lapDistance: 1.00,
+			lapPace: '5:24',
+		},
+	]
 };
 
 function generateFakeHeartRateData(numberOfheartRate: number): Array<number> {

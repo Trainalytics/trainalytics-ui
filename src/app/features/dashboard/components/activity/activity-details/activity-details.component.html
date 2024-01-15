@@ -58,25 +58,26 @@
 					[scrollable]="true"
 					scrollHeight="240px"
 					[value]="[1]"
-					styleClass="p-datatable-gridlines p-datatable-striped"
+					styleClass="p-datatable-striped"
 				>
+					<ng-template pTemplate="header">
+						<tr>
+							<th></th>
+							<th>{{ "activity-details.distance" | transloco }}</th>
+							<th>{{ "activity-details.timing.duration_time" | transloco }}</th>
+							<th>{{ "activity-details.pace.pace" | transloco }}</th>
+						</tr>
+					</ng-template>
 					<ng-template pTemplate="body">
 						<tr>
-							<td>
-								{{ activity.hrData.averageHr }} /km<br />
-								{{ "activity-details.heart_rate.avg_hr" | transloco }}
-							</td>
+							<td>1</td>
 							<td>
 								{{ activity.hrData.maxHr }} bpm<br />
-								{{ "activity-details.heart_rate.max_hr" | transloco }}
+								{{ "activity-details.distance" | transloco }}
 							</td>
 						</tr>
 						<tr>
-							<td>
-								{{ activity.calories }}<br />{{
-									"activity-details.nutrition.burned_calories" | transloco
-								}}
-							</td>
+							<td>2</td>
 							<td>{{ activity.hrData.averageHr }}<br />Average Heart Rate</td>
 						</tr>
 						<tr>

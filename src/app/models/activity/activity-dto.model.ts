@@ -1,3 +1,5 @@
+import { LapDto } from "./lapDto.model";
+
 export interface ActivityDto {
 	/**
 	 * Id of the activity
@@ -79,6 +81,10 @@ export interface ActivityDto {
 		 */
 		allElevation: Array<number>;
 	};
+	/**
+	 * Laps data of the activity
+	 */
+	lapsArray: Array<LapDto>;
 	/**
 	 * The distance of the activity
 	 */
