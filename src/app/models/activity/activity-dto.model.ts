@@ -1,4 +1,4 @@
-import { LapDto } from "./lapDto.model";
+import { LapDto } from "./lap-dto.model";
 
 export interface ActivityDto {
 	/**

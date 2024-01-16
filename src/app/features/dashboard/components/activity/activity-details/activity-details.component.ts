@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivityDto } from '@models/activity/activity-dto.model';
 import { activityDtoMock } from '@testing/mocks/activity-dto.mock';
 
@@ -109,14 +109,16 @@ export class ActivityDetailsComponent implements OnInit {
 		// TODO : Clean this code
 		let lapDistance: Array<number> = [];
 		let lapNumber: Array<number> = [];
+		let lapPace: Array<string> = [];
 		this.activity.lapsArray.forEach(element => {
 			console.log(element.time);
 			lapDistance.push(element.distance);
 			lapNumber.push(element.number);
+			lapPace.push(element.pace);
 		});
 
 		this.lapsData = {
-			labels: lapNumber,
+			labels: lapPace,
 			datasets: [
 				{
 					label: 'Lap',
@@ -152,7 +154,7 @@ export class ActivityDetailsComponent implements OnInit {
 				},
 				y: {
 					min: Math.min(...this.activity.hrData.allHr) - 50,
-					max: Math.max(...this.activity.hrData.allHr) + 50,
+					max: Math.max(...this.activity.hrData.allHr),
 					grid: {
 						display: false,
 					}
@@ -233,14 +235,14 @@ export class ActivityDetailsComponent implements OnInit {
 					callbacks: {
 						// Hide the tooltip title
 						title: () => ''
-					}
+					},
 				}
 			},
 			scales: {
 				x: {
 					grid: {
 						display: false,
-					}
+					},
 				},
 				y: {
 					beginAtZero: true,
