@@ -108,17 +108,18 @@ export class ActivityDetailsComponent implements OnInit {
 
 		// TODO : Clean this code
 		let lapDistance: Array<number> = [];
-		let lapNumber: Array<number> = [];
+		let lapNumber: Array<string> = [];
 		this.activity.lapsArray.forEach(element => {
 			console.log(element.time);
 			lapDistance.push(element.distance);
-			lapNumber.push(element.number);
+			lapNumber.push('');
 		});
 
 		this.lapsData = {
 			labels: lapNumber,
 			datasets: [
 				{
+					label: 'Lap',
 					data: lapDistance,
 					borderColor: documentStyle.getPropertyValue('--teal-600'),
 					backgroundColor: 'rgba(0,128,116,0.25)',
@@ -231,10 +232,6 @@ export class ActivityDetailsComponent implements OnInit {
 			},
 			scales: {
 				x: {
-					// Hide the labels of the datasets
-					ticks: {
-						display: true
-					},
 					grid: {
 						display: false,
 					}
