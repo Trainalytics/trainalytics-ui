@@ -108,11 +108,11 @@ export class ActivityDetailsComponent implements OnInit {
 
 		// TODO : Clean this code
 		let lapDistance: Array<number> = [];
-		let lapNumber: Array<string> = [];
+		let lapNumber: Array<number> = [];
 		this.activity.lapsArray.forEach(element => {
 			console.log(element.time);
 			lapDistance.push(element.distance);
-			lapNumber.push('');
+			lapNumber.push(element.number);
 		});
 
 		this.lapsData = {
@@ -228,6 +228,12 @@ export class ActivityDetailsComponent implements OnInit {
 				// Hide the legend of the graphic
 				legend: {
 					display: false,
+				},
+				tooltip: {
+					callbacks: {
+						// Hide the tooltip title
+						title: () => ''
+					}
 				}
 			},
 			scales: {

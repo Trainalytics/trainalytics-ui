@@ -63,6 +63,24 @@ export const activityDtoMock: ActivityDto = {
 			time: '5:24',
 			pace: '5:24',
 		},
+		{
+			number: 7,
+			distance: 1.00,
+			time: '5:24',
+			pace: '5:24',
+		},
+		{
+			number: 8,
+			distance: 1.00,
+			time: '5:24',
+			pace: '5:24',
+		},
+		{
+			number: 9,
+			distance: 1.00,
+			time: '5:24',
+			pace: '5:24',
+		},
 	]
 };
 
